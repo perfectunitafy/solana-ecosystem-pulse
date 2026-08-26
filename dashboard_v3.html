@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLANA PULSE // MARKET MONITOR</title>
+<style>
+:root{--bg:#000;--amber:#ff9f1a;--green:#00c853;--red:#ff3d00;--white:#e0e0e0;--dim:#8a6d1f;--grid:#262100}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--amber);font-family:Consolas,"Courier New",monospace;font-size:12px;padding:4px 8px}
+.hdr{display:flex;justify-content:space-between;border-bottom:2px solid var(--amber);padding:2px 0;flex-wrap:wrap}
+.hdr b{font-size:14px;letter-spacing:2px}
+#tape{overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--dim);padding:3px 0;color:var(--amber)}
+#tape span{margin-right:28px}
+.g{color:var(--green)}.r{color:var(--red)}.w{color:var(--white)}.d{color:var(--dim)}
+table{width:100%;border-collapse:collapse;margin-top:6px}
+th{color:var(--dim);text-align:left;border-bottom:1px solid var(--dim);padding:2px 6px;font-weight:normal;text-transform:uppercase;font-size:11px}
+td{padding:2px 6px;border-bottom:1px solid var(--grid)}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.sec-title{background:var(--amber);color:#000;font-weight:bold;padding:1px 6px;display:inline-block;margin-top:10px;letter-spacing:1px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:800px){.grid2{grid-template-columns:1fr}}
+canvas{width:100%;height:110px;display:block;background:#050500}
+footer{margin-top:10px;color:var(--dim);border-top:1px solid var(--dim);padding:4px 0;font-size:11px}
+.up::before{content:"▲"}.dn::before{content:"▼"}
+.flash{animation:fl .6s}@keyframes fl{from{background:#33270a}to{background:none}}
+</style>
+</head>
+<body>
+<div class="hdr"><b>◆ SOLPULSE TERMINAL</b><span>SOL/USDT · MAINNET-BETA</span><span id="clock"></span></div>
+<div id="tape">CONNECTING FEED…</div>
+
+<div class="sec-title">MARKET DATA</div>
+<div class="grid2">
+<div>
+<table>
+<tr><th>METRIC</th><th>VALUE</th><th>Δ24H</th><th>SRC</th></tr>
+<tbody id="t-mkt"></tbody>
+</table>
+<table>
+<tr><th colspan="2">TOKEN ECONOMICS</th></tr>
+<tbody id="t-eco"></tbody>
+</table>
+</div>
+<div>
+<div class="sec-title">SOL PRICE / TPS — INTRADAY ACCUMULATED</div>
+<canvas id="ch-price" width="600" height="220"></canvas>
+<canvas id="ch-tps" width="600" height="220"></canvas>
+<div class="d">history points: <span id="hist-n">0</span> · sampled every pipeline cycle · rolling 24h window</div>
+</div>
+</div>
+
+<div class="grid2">
+<div>
+<div class="sec-title">NETWORK / VALIDATORS</div>
+<table><tbody id="t-net"></tbody></table>
+<div class="sec-title">ALERTS</div>
+<table><tbody id="t-al"></tbody></table>
+</div>
+<div>
+<div class="sec-title">DEFI — TOP PROTOCOLS BY TVL</div>
+<table>
+<tr><th>#</th><th>PROTOCOL</th><th>CATEGORY</th><th class="num">TVL</th><th class="num">Δ24H</th></tr>
+<tbody id="t-proto"></tbody>
+</table>
+</div>
+</div>
+
+<footer>SOURCES: SOLANA PUBLIC JSON-RPC · DEFILLAMA · OKX/DEXSCREENER — NO PRIVATE API KEYS | UI VARIANTS: <a class="g" href="dashboard.html">DEFAULT</a> · <a class="g" href="dashboard_v2.html">TERMINAL</a> · REFRESH 10s</footer>
+
+<script>
+const fUSD=v=>v>=1e9?'$'+(v/1e9).toFixed(2)+'B':v>=1e6?'$'+(v/1e6).toFixed(2)+'M':'$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:2});
+const fN=v=>Number(v||0).toLocaleString('en-US');
+const pct=v=>(v>=0?'+':'')+v.toFixed(2)+'%';
+const pc=v=>`<span class="${v>=0?'g up':'r dn'}">${pct(v)}</span>`;
+let hist=[];
+
+function draw(cv,vals,color){
+  const c=cv.getContext('2d'),W=cv.width,H=cv.height;
+  c.clearRect(0,0,W,H);
+  if(vals.length<2){c.fillStyle='#8a6d1f';c.fillText('accumulating history…',10,H/2);return;}
+  const min=Math.min(...vals),max=Math.max(...vals),pad=(max-min)||1;
+  c.strokeStyle='#262100';
+  for(let i=1;i<4;i++){c.beginPath();c.moveTo(0,H*i/4);c.lineTo(W,H*i/4);c.stroke();}
+  c.beginPath();
+  vals.forEach((v,i)=>{const x=i/(vals.length-1)*W,y=H-10-(v-min)/pad*(H-22);i?c.lineTo(x,y):c.moveTo(x,y);});
+  c.strokeStyle=color;c.lineWidth=1.5;c.stroke();
+  c.fillStyle=color;c.beginPath();c.arc(W-3,H-10-(vals[vals.length-1]-min)/pad*(H-22),2.5,0,7);c.fill();
+  c.fillStyle='#8a6d1f';c.font='10px monospace';
+  c.fillText(fN(max),4,10);c.fillText(fN(min),4,H-3);
+}
+
+async function load(){
+  try{
+    const [r,h]=await Promise.all([
+      fetch('report.json?t='+Date.now()).then(x=>x.json()),
+      fetch('history.jsonl?t='+Date.now()).then(x=>x.text()).catch(()=>'')
+    ]);
+    hist=h.trim()?h.trim().split('\n').map(JSON.parse):[];
+    render(r);
+  }catch(e){document.getElementById('clock').textContent='FEED ERROR: '+e.message;}
+}
+
+function render(d){
+  const n=d.network_performance,v=d.validators,e=economics=d.economics,f=d.defi,a=d.anomalies;
+  document.getElementById('clock').textContent=d.meta.generated_at_utc+' UTC';
+  document.getElementById('tape').innerHTML=
+    `<span>SOL <span class="${e.change_24h_pct>=0?'g':'r'}">${e.price_usd? '$'+e.price_usd:'—'} ${pc(e.change_24h_pct)}</span></span>`+
+    `<span>TPS <span class="w">${fN(n.current_tps)}</span></span>`+
+    `<span>TVL <span class="w">${fUSD(f.tvl_usd)}</span> ${pc(f.tvl_change_24h_pct)}</span>`+
+    `<span>MKT CAP <span class="w">${fUSD(e.market_cap_usd)}</span></span>`+
+    `<span>VOL24H <span class="w">${fUSD(e.volume_24h_usd)}</span></span>`+
+    `<span>VALS <span class="w">${v.active_validators}</span></span>`+
+    `<span>EPOCH <span class="w">#${n.epoch} (${n.epoch_progress_pct}%)</span></span>`+
+    `<span>STATUS <span class="${a.overall_status==='HEALTHY'?'g':'r'}">${a.overall_status}</span></span>`;
+  document.getElementById('t-mkt').innerHTML=
+    `<tr><td>SOL/USDT</td><td class="num w">$${e.price_usd}</td><td class="num">${pc(e.change_24h_pct)}</td><td>${e.price_source}</td></tr>`+
+    `<tr><td>CHAIN TVL</td><td class="num w">${fUSD(f.tvl_usd)}</td><td class="num">${pc(f.tvl_change_24h_pct)}</td><td>LLAMA</td></tr>`+
+    `<tr><td>TVL Δ7D</td><td class="num"></td><td class="num">${pc(f.tvl_change_7d_pct)}</td><td>LLAMA</td></tr>`+
+    `<tr><td>NETWORK TPS</td><td class="num w">${fN(n.current_tps)}</td><td class="num d">avg30m ${fN(n.avg_tps_30m)}</td><td>RPC</td></tr>`;
+  document.getElementById('t-eco').innerHTML=
+    `<tr><td>MARKET CAP</td><td class="num w">${fUSD(e.market_cap_usd)}</td></tr>`+
+    `<tr><td>24H VOLUME</td><td class="num w">${fUSD(e.volume_24h_usd)}</td></tr>`+
+    `<tr><td>CIRC SUPPLY</td><td class="num w">${fN(e.circulating_sol)} SOL</td></tr>`+
+    `<tr><td>TOTAL SUPPLY</td><td class="num w">${fN(e.total_supply_sol)} SOL</td></tr>`;
+  document.getElementById('t-net').innerHTML=
+    `<tr><td>EPOCH / PROGRESS</td><td class="num w">#${n.epoch} · ${n.epoch_progress_pct}% (~${n.est_hours_remaining}h left)</td></tr>`+
+    `<tr><td>SLOT / BLOCK HT</td><td class="num w">${fN(n.absolute_slot)} / ${fN(n.block_height)}</td></tr>`+
+    `<tr><td>VALIDATORS ACTIVE/DELINQ</td><td class="num w">${v.active_validators} / <span class="${v.delinquent_validators?'r':'g'}">${v.delinquent_validators}</span></td></tr>`+
+    `<tr><td>TOTAL STAKE</td><td class="num w">${fN(v.total_active_stake_sol)} SOL</td></tr>`+
+    `<tr><td>NAKAMOTO COEFF</td><td class="num g">${v.nakamoto_coefficient}</td></tr>`+
+    `<tr><td>SOLANA-CORE</td><td class="num w">${n.solana_core_version}</td></tr>`;
+  document.getElementById('t-proto').innerHTML=f.top_protocols.map((p,i)=>
+    `<tr><td>${i+1}</td><td class="w">${p.name.toUpperCase()}</td><td class="d">${p.category.toUpperCase()}</td><td class="num w">${fUSD(p.tvl_solana_usd)}</td><td class="num">${pc(p.change_1d)}</td></tr>`).join('');
+  const al=a.anomalies||[];
+  document.getElementById('t-al').innerHTML= al.length?
+    al.map(x=>`<tr><td class="${x.severity==='CRITICAL'?'r':'r'}">■ ${x.severity}</td><td>${x.metric} — ${x.description}</td></tr>`).join('')
+    :'<tr><td class="g">■ CLEAR</td><td>No anomalies detected. All telemetry nominal.</td></tr>';
+  document.getElementById('hist-n').textContent=hist.length;
+  draw(document.getElementById('ch-price'),hist.map(p=>p.price_usd),'#ff9f1a');
+  draw(document.getElementById('ch-tps'),hist.map(p=>p.tps),'#00c853');
+}
+
+load();
+setInterval(load,10000);
+setInterval(()=>{document.getElementById('clock').textContent=new Date().toISOString().replace('T',' ').slice(0,19)+' UTC'},1000);
+</script>
+</body>
+</html>

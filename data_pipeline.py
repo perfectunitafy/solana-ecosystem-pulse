@@ -12,6 +12,7 @@ import json
 import time
 import urllib.request
 import urllib.error
+from pathlib import Path
 from typing import Dict, Any, List, Optional
 
 SOLANA_RPCS = [
@@ -64,6 +65,37 @@ def rpc_call(method: str, params: Optional[List[Any]] = None, timeout: int = 20)
         except Exception:
             continue
     return None
+
+
+HISTORY_FILE = "history.jsonl"
+HISTORY_MAX_POINTS = 5760  # ~24h at 15s interval
+
+
+def append_history_snapshot(data: Dict[str, Any]) -> None:
+    """Appends a compact metrics snapshot to history.jsonl for time-series charts."""
+    try:
+        snap = {
+            "ts": data["meta"]["timestamp"],
+            "iso": data["meta"]["generated_at_utc"],
+            "tps": data["network_performance"]["current_tps"],
+            "avg_tps_30m": data["network_performance"]["avg_tps_30m"],
+            "tvl_usd": data["defi"]["tvl_usd"],
+            "price_usd": data["economics"]["price_usd"],
+            "validators": data["validators"]["active_validators"],
+        }
+        base = Path(__file__).parent / HISTORY_FILE
+        lines = []
+        if base.exists():
+            lines = base.read_text().splitlines()
+        lines.append(json.dumps(snap))
+        # Keep only the most recent N points (24h rolling window)
+        if len(lines) > HISTORY_MAX_POINTS:
+            lines = lines[-HISTORY_MAX_POINTS:]
+        tmp = base.with_suffix(".tmp")
+        tmp.write_text("\n".join(lines) + "\n")
+        tmp.replace(base)
+    except Exception as e:
+        print(f"[history] snapshot failed: {e}")
 
 
 class SolanaDataPipeline:

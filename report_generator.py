@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 from typing import Dict, Any
 
-from data_pipeline import SolanaDataPipeline
+from data_pipeline import SolanaDataPipeline, append_history_snapshot
 from anomaly_detector import AnomalyDetector
 
 BASE = Path(__file__).parent
@@ -102,6 +102,7 @@ def main():
     print("[1/4] Aggregating on-chain + off-chain data...")
     pipeline = SolanaDataPipeline()
     data = pipeline.run_full_aggregation()
+    append_history_snapshot(data)  # time-series snapshot for dashboard charts
 
     print("[2/4] Running anomaly detection engine...")
     detector = AnomalyDetector()
