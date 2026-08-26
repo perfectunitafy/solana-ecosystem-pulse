@@ -1,49 +1,49 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T09:35:41Z",
-    "timestamp": 1787736941,
+    "generated_at_utc": "2026-08-26T10:04:30Z",
+    "timestamp": 1787738670,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441838518,
-    "block_height": 419887039,
-    "slot_index": 334518,
+    "absolute_slot": 441843251,
+    "block_height": 419891772,
+    "slot_index": 339251,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 77.43,
-    "est_hours_remaining": 12.2,
-    "current_tps": 3344.3,
-    "avg_tps_30m": 3365.6,
-    "min_tps_30m": 3081.7,
-    "max_tps_30m": 3646.4,
+    "epoch_progress_pct": 78.53,
+    "est_hours_remaining": 11.6,
+    "current_tps": 3792.8,
+    "avg_tps_30m": 3596.3,
+    "min_tps_30m": 3345.2,
+    "max_tps_30m": 4073.6,
     "recent_tps_samples": [
-      3344.3,
-      3568.8,
-      3329.9,
-      3644.6,
-      3471.2,
-      3482.7,
-      3404.9,
-      3320.7,
-      3440.1,
-      3471.9,
-      3378.3,
-      3533.2,
-      3483.6,
-      3646.4,
-      3536.4
+      3792.8,
+      3686.3,
+      3869.0,
+      3542.1,
+      3514.0,
+      3641.6,
+      3514.6,
+      3358.3,
+      3631.4,
+      3437.8,
+      3711.3,
+      3497.6,
+      3659.7,
+      3638.6,
+      3757.3
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
   },
   "validators": {
-    "active_validators": 686,
-    "delinquent_validators": 9,
+    "active_validators": 684,
+    "delinquent_validators": 11,
     "total_validators": 695,
-    "total_active_stake_sol": 435018049.48,
-    "total_delinquent_stake_sol": 100054.3,
-    "delinquent_stake_pct": 0.023,
+    "total_active_stake_sol": 433860730.71,
+    "total_delinquent_stake_sol": 1257373.06,
+    "delinquent_stake_pct": 0.289,
     "nakamoto_coefficient": 18,
     "top_5_validators": [
       {
@@ -84,13 +84,13 @@
     ]
   },
   "economics": {
-    "price_usd": 96.4,
-    "change_24h_pct": -3.96,
-    "volume_24h_usd": 9662776932.58,
-    "market_cap_usd": 56237373942.87,
-    "price_source": "OKX | cross-check: COHERENT (0.0311% across 3 sources)",
-    "total_supply_sol": 632859108.89,
-    "circulating_sol": 583375248.37,
+    "price_usd": 96.03,
+    "change_24h_pct": -3.7,
+    "volume_24h_usd": 9572697752.32,
+    "market_cap_usd": 56021523503.99,
+    "price_source": "OKX | cross-check: COHERENT (0.0417% across 3 sources)",
+    "total_supply_sol": 632859092.26,
+    "circulating_sol": 583375231.74,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
@@ -161,57 +161,45 @@
       {
         "name": "Bybit",
         "category": "CEX",
-        "tvl_solana_usd": 1024294293.42,
-        "change_1d": 2.06
+        "tvl_solana_usd": 1027008669.36,
+        "change_1d": 2.15
       }
     ]
   },
   "price_verification": {
-    "timestamp": 1787736950,
+    "timestamp": 1787738683,
     "prices": {
-      "okx": 96.4,
-      "dexscreener": 96.37,
-      "coingecko": 96.39
+      "okx": 96.03,
+      "dexscreener": 96.065,
+      "coingecko": 96.07
     },
-    "spread_abs_usd": 0.03,
-    "spread_pct": 0.0311,
-    "avg_price": 96.387,
+    "spread_abs_usd": 0.04,
+    "spread_pct": 0.0417,
+    "avg_price": 96.055,
     "outlier_sources": [],
     "sources_up": 3,
     "verdict": "COHERENT"
   },
   "trends": {
-    "samples": 771,
-    "span_hours": 5.3,
+    "samples": 840,
+    "span_hours": 5.8,
     "tps": {
-      "sma_short": 3275.5,
-      "sma_long": 3260.5,
-      "trend_24h_proxy": "FALLING (-1.9%)",
+      "sma_short": 3409.6,
+      "sma_long": 3318.8,
+      "trend_24h_proxy": "STABLE (-0.2%)",
       "min": 2930.9,
-      "max": 3789.5
+      "max": 4164.4
     },
     "price": {
-      "trend": "STABLE (+0.3%)",
-      "min": 96.28,
+      "trend": "STABLE (-0.1%)",
+      "min": 95.89,
       "max": 97.37
     },
     "validator_churn": {
       "activation_events": 6,
-      "deactivation_events": 4,
-      "net_change": 2,
+      "deactivation_events": 6,
+      "net_change": 0,
       "events": [
-        {
-          "at": "2026-08-26T05:52:10Z",
-          "from": 683,
-          "to": 684,
-          "delta": 1
-        },
-        {
-          "at": "2026-08-26T05:53:44Z",
-          "from": 684,
-          "to": 685,
-          "delta": 1
-        },
         {
           "at": "2026-08-26T07:27:14Z",
           "from": 685,
@@ -229,6 +217,18 @@
           "from": 685,
           "to": 686,
           "delta": 1
+        },
+        {
+          "at": "2026-08-26T09:55:13Z",
+          "from": 686,
+          "to": 685,
+          "delta": -1
+        },
+        {
+          "at": "2026-08-26T09:56:03Z",
+          "from": 685,
+          "to": 684,
+          "delta": -1
         }
       ]
     }

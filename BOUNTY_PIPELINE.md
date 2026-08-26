@@ -11,7 +11,7 @@
 | $1,500 | Aug 31 | Mato research: how do you trade on Solana? | Research writeup | **Good** — we have real trading-adjacent data |
 | $1,500 | Sep 4 | My Crypto Casino X thread | Content | Low (brand risk) |
 | $1,500 | Sep 7 | Flint prop AMM post | Content | Low-medium |
-| $1,000 | Sep 14 | NectarFi x Dominion Market | Market analysis? | Medium — check |
+| ~~$1,000~~ | Sep 14 | NectarFi x Dominion Market | ❌ deprioritized — video production for Nigerian audience, weak fit without video setup |
 | ~~$1,000~~ | Sep 15 | IDEATHON — **REGIONAL: Ukraine only** | ❌ EXCLUDED — we cannot submit |
 | $750 | Aug 30 | KriptoK League content | Content | Low |
 | $500 | Sep 9 | ZNS Creator Challenge | Content | Low |
