@@ -1,5 +1,5 @@
 # 🌐 Solana Ecosystem Pulse Report
-> **Generated:** 2026-08-26T11:36:54Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
+> **Generated:** 2026-08-26T12:31:04Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
 
 ## ⚠ Anomaly Detection (0)
 
@@ -9,22 +9,22 @@
 
 | Metric | Value |
 |---|---|
-| Current TPS | **3,281.5** |
-| Avg TPS (30m window) | 3,578.3 |
-| TPS Range (30m) | 3,248.7 – 4,026.7 |
-| Epoch | #1022 (82.04% complete) |
-| Est. epoch end | ~9.7h remaining |
-| Absolute Slot | 441,858,402 |
-| Block Height | 419,906,919 |
+| Current TPS | **4,562.3** |
+| Avg TPS (30m window) | 3,575.4 |
+| TPS Range (30m) | 3,249.9 – 4,562.3 |
+| Epoch | #1022 (84.1% complete) |
+| Est. epoch end | ~8.6h remaining |
+| Absolute Slot | 441,867,308 |
+| Block Height | 419,915,817 |
 | solana-core version | 4.2.0 |
 
 ## 🔐 Validator Set & Decentralization
 
 | Metric | Value |
 |---|---|
-| Active Validators | **685** |
-| Delinquent Validators | 10 (0.15% of stake) |
-| Total Active Stake | 434,463,863 SOL |
+| Active Validators | **684** |
+| Delinquent Validators | 11 (0.067% of stake) |
+| Total Active Stake | 434,828,142 SOL |
 | **Nakamoto Coefficient** | **18** (min nodes to halt consensus) |
 
 ### Top 5 Validators by Active Stake
@@ -41,27 +41,27 @@
 
 | Metric | Value |
 |---|---|
-| SOL Price | **$97.06** (-2.06% / 24h) |
+| SOL Price | **$97.06** (-1.03% / 24h) |
 | Market Cap | $56.62B |
-| 24h Volume | $9.47B |
-| Circulating Supply | 583,375,178 SOL |
-| Total Supply | 632,859,039 SOL |
+| 24h Volume | $9.29B |
+| Circulating Supply | 583,375,148 SOL |
+| Total Supply | 632,859,008 SOL |
 
 ## 🏦 DeFi & TVL
 
 | Metric | Value |
 |---|---|
-| Solana Chain TVL | **$5.59B** (-2.55% / 24h, +14.17% / 7d) |
+| Solana Chain TVL | **$5.60B** (-2.45% / 24h, +14.29% / 7d) |
 
 ### Top Protocols on Solana (by TVL)
 
 | Protocol | Category | TVL | 24h Δ |
 |---|---|---|---|
 | Binance CEX | CEX | $6.52B | +6.86% |
-| Sanctum Validator LSTs | Liquid Staking | $1.47B | -2.71% |
-| Kamino Lend | Lending | $1.18B | -3.81% |
+| Sanctum Validator LSTs | Liquid Staking | $1.48B | -1.30% |
+| Kamino Lend | Lending | $1.18B | -2.99% |
 | Raydium AMM | Dexs | $1.07B | -3.90% |
-| Jupiter Lend | Lending | $1.05B | -3.44% |
+| Jupiter Lend | Lending | $1.05B | -2.88% |
 | Bybit | CEX | $1.02B | +2.35% |
 
 ---
