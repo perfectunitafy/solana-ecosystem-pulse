@@ -1,49 +1,49 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T07:10:31Z",
-    "timestamp": 1787728231,
+    "generated_at_utc": "2026-08-26T07:34:44Z",
+    "timestamp": 1787729684,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441814617,
-    "block_height": 419863142,
-    "slot_index": 310617,
+    "absolute_slot": 441818605,
+    "block_height": 419867130,
+    "slot_index": 314605,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 71.9,
-    "est_hours_remaining": 15.2,
-    "current_tps": 3072.9,
-    "avg_tps_30m": 3242.0,
-    "min_tps_30m": 3072.6,
-    "max_tps_30m": 3544.6,
+    "epoch_progress_pct": 72.83,
+    "est_hours_remaining": 14.7,
+    "current_tps": 3148.9,
+    "avg_tps_30m": 3121.5,
+    "min_tps_30m": 2938.9,
+    "max_tps_30m": 3378.6,
     "recent_tps_samples": [
-      3072.9,
-      3196.9,
-      3332.5,
-      3119.7,
-      3253.6,
-      3261.7,
-      3262.8,
-      3371.5,
-      3187.7,
-      3201.9,
-      3309.1,
-      3211.6,
-      3131.5,
-      3218.1,
-      3362.4
+      3148.9,
+      3100.0,
+      2979.8,
+      2938.9,
+      3015.2,
+      2967.6,
+      3003.4,
+      3053.5,
+      3111.3,
+      3026.5,
+      2968.6,
+      3007.8,
+      3255.5,
+      2944.2,
+      3082.5
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
   },
   "validators": {
-    "active_validators": 685,
-    "delinquent_validators": 10,
+    "active_validators": 684,
+    "delinquent_validators": 11,
     "total_validators": 695,
-    "total_active_stake_sol": 434926939.8,
-    "total_delinquent_stake_sol": 191163.98,
-    "delinquent_stake_pct": 0.044,
+    "total_active_stake_sol": 433894586.03,
+    "total_delinquent_stake_sol": 1223517.75,
+    "delinquent_stake_pct": 0.281,
     "nakamoto_coefficient": 18,
     "top_5_validators": [
       {
@@ -84,19 +84,19 @@
     ]
   },
   "economics": {
-    "price_usd": 96.86,
-    "change_24h_pct": -4.6,
-    "volume_24h_usd": 10724485843.18,
-    "market_cap_usd": 56505733905.89,
-    "price_source": "OKX | cross-check: MINOR_DRIFT (0.1344% across 3 sources)",
-    "total_supply_sol": 632859184.76,
-    "circulating_sol": 583375324.24,
+    "price_usd": 97.08,
+    "change_24h_pct": -4.4,
+    "volume_24h_usd": 10642602300.27,
+    "market_cap_usd": 56634075301.58,
+    "price_source": "OKX | cross-check: MINOR_DRIFT (0.1547% across 3 sources)",
+    "total_supply_sol": 632859172.65,
+    "circulating_sol": 583375312.13,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
-    "tvl_usd": 5599660725,
-    "tvl_change_24h_pct": -2.4,
-    "tvl_change_7d_pct": 14.35,
+    "tvl_usd": 5600217324,
+    "tvl_change_24h_pct": -2.39,
+    "tvl_change_7d_pct": 14.36,
     "tvl_history_7d": [
       {
         "date": 1787184000,
@@ -124,7 +124,7 @@
       },
       {
         "date": 1787702400,
-        "tvl": 5599660725
+        "tvl": 5600217324
       }
     ],
     "top_protocols": [
@@ -167,27 +167,29 @@
     ]
   },
   "price_verification": {
-    "timestamp": 1787728240,
+    "timestamp": 1787729696,
     "prices": {
-      "okx": 96.87,
-      "dexscreener": 96.75,
-      "coingecko": 96.88
+      "okx": 97.1,
+      "dexscreener": 97.1,
+      "coingecko": 96.95
     },
-    "spread_abs_usd": 0.13,
-    "spread_pct": 0.1344,
-    "avg_price": 96.833,
-    "outlier_sources": [],
+    "spread_abs_usd": 0.15,
+    "spread_pct": 0.1547,
+    "avg_price": 97.05,
+    "outlier_sources": [
+      "coingecko"
+    ],
     "sources_up": 3,
     "verdict": "MINOR_DRIFT"
   },
   "trends": {
-    "samples": 426,
-    "span_hours": 2.9,
+    "samples": 484,
+    "span_hours": 3.3,
     "tps": {
-      "sma_short": 3278.4,
-      "sma_long": 3269.5,
-      "trend_24h_proxy": "FALLING (-3.2%)",
-      "min": 2983.6,
+      "sma_short": 3161.4,
+      "sma_long": 3214.2,
+      "trend_24h_proxy": "FALLING (-4.9%)",
+      "min": 2930.9,
       "max": 3789.5
     },
     "price": {
@@ -197,15 +199,9 @@
     },
     "validator_churn": {
       "activation_events": 4,
-      "deactivation_events": 3,
-      "net_change": 1,
+      "deactivation_events": 4,
+      "net_change": 0,
       "events": [
-        {
-          "at": "2026-08-26T05:15:37Z",
-          "from": 684,
-          "to": 685,
-          "delta": 1
-        },
         {
           "at": "2026-08-26T05:48:14Z",
           "from": 685,
@@ -229,6 +225,12 @@
           "from": 684,
           "to": 685,
           "delta": 1
+        },
+        {
+          "at": "2026-08-26T07:27:14Z",
+          "from": 685,
+          "to": 684,
+          "delta": -1
         }
       ]
     }

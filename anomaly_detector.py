@@ -118,6 +118,35 @@ class AnomalyDetector:
             if overall_severity != "CRITICAL":
                 overall_severity = "WARNING"
 
+        # 6. Data source health (from cross-source verification block)
+        pv = data.get("price_verification", {})
+        if pv.get("error"):
+            anomalies.append({
+                "metric": "Price Feed Integrity",
+                "severity": "WARNING",
+                "value": "sources degraded",
+                "description": f"Cross-source price check failed: {pv['error']}. Market data may be stale."
+            })
+            if overall_severity != "CRITICAL":
+                overall_severity = "WARNING"
+        elif pv.get("sources_up", 3) < 2:
+            anomalies.append({
+                "metric": "Price Feed Integrity",
+                "severity": "WARNING",
+                "value": f"{pv.get('sources_up')}/3 sources up",
+                "description": "Multiple price sources down — running on reduced redundancy."
+            })
+            if overall_severity != "CRITICAL":
+                overall_severity = "WARNING"
+        elif pv.get("verdict") == "DIVERGENCE":
+            anomalies.append({
+                "metric": "Cross-Market Divergence",
+                "severity": "CRITICAL",
+                "value": f"{pv.get('spread_pct')}% spread",
+                "description": f"Severe price divergence across venues: {pv.get('prices')}. Possible arbitrage or stale feed."
+            })
+            overall_severity = "CRITICAL"
+
         # Health Score computation (0 - 100)
         health_score = 100
         for a in anomalies:
