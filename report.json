@@ -1,23 +1,26 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T06:34:37Z",
-    "timestamp": 1787726077,
+    "generated_at_utc": "2026-08-26T06:37:14Z",
+    "timestamp": 1787726234,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441808683,
-    "block_height": 419857208,
-    "slot_index": 304683,
+    "absolute_slot": 441809118,
+    "block_height": 419857643,
+    "slot_index": 305118,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 70.53,
+    "epoch_progress_pct": 70.63,
     "est_hours_remaining": 15.9,
-    "current_tps": 3165.9,
-    "avg_tps_30m": 3193.7,
+    "current_tps": 3619.0,
+    "avg_tps_30m": 3213.5,
     "min_tps_30m": 3016.3,
     "max_tps_30m": 3690.6,
     "recent_tps_samples": [
+      3619.0,
+      3419.9,
+      3114.7,
       3165.9,
       3292.1,
       3690.6,
@@ -29,10 +32,7 @@
       3216.0,
       3296.7,
       3334.8,
-      3357.5,
-      3130.8,
-      3289.3,
-      3028.3
+      3357.5
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
@@ -84,13 +84,13 @@
     ]
   },
   "economics": {
-    "price_usd": 96.71,
-    "change_24h_pct": -4.63,
-    "volume_24h_usd": 10840096115.54,
-    "market_cap_usd": 56418229420.56,
-    "price_source": "OKX",
-    "total_supply_sol": 632859203.51,
-    "circulating_sol": 583375342.99,
+    "price_usd": 96.62,
+    "change_24h_pct": -4.46,
+    "volume_24h_usd": 10811092680.67,
+    "market_cap_usd": 56365725501.53,
+    "price_source": "OKX | cross-check: MINOR_DRIFT (0.1035% across 3 sources)",
+    "total_supply_sol": 632859202.08,
+    "circulating_sol": 583375341.56,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
@@ -165,6 +165,20 @@
         "change_1d": 2.0
       }
     ]
+  },
+  "price_verification": {
+    "timestamp": 1787726245,
+    "prices": {
+      "okx": 96.62,
+      "dexscreener": 96.64,
+      "coingecko": 96.72
+    },
+    "spread_abs_usd": 0.1,
+    "spread_pct": 0.1035,
+    "avg_price": 96.66,
+    "outlier_sources": [],
+    "sources_up": 3,
+    "verdict": "MINOR_DRIFT"
   },
   "anomalies": {
     "overall_status": "HEALTHY",

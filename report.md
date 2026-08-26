@@ -1,5 +1,5 @@
 # 🌐 Solana Ecosystem Pulse Report
-> **Generated:** 2026-08-26T06:34:37Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
+> **Generated:** 2026-08-26T06:37:14Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
 
 ## ⚠ Anomaly Detection (0)
 
@@ -9,13 +9,13 @@
 
 | Metric | Value |
 |---|---|
-| Current TPS | **3,165.9** |
-| Avg TPS (30m window) | 3,193.7 |
+| Current TPS | **3,619.0** |
+| Avg TPS (30m window) | 3,213.5 |
 | TPS Range (30m) | 3,016.3 – 3,690.6 |
-| Epoch | #1022 (70.53% complete) |
+| Epoch | #1022 (70.63% complete) |
 | Est. epoch end | ~15.9h remaining |
-| Absolute Slot | 441,808,683 |
-| Block Height | 419,857,208 |
+| Absolute Slot | 441,809,118 |
+| Block Height | 419,857,643 |
 | solana-core version | 4.2.0 |
 
 ## 🔐 Validator Set & Decentralization
@@ -41,11 +41,11 @@
 
 | Metric | Value |
 |---|---|
-| SOL Price | **$96.71** (-4.63% / 24h) |
-| Market Cap | $56.42B |
-| 24h Volume | $10.84B |
-| Circulating Supply | 583,375,343 SOL |
-| Total Supply | 632,859,204 SOL |
+| SOL Price | **$96.62** (-4.46% / 24h) |
+| Market Cap | $56.37B |
+| 24h Volume | $10.81B |
+| Circulating Supply | 583,375,342 SOL |
+| Total Supply | 632,859,202 SOL |
 
 ## 🏦 DeFi & TVL
 

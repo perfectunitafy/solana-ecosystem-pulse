@@ -167,7 +167,8 @@ function render(d){
  g+=panel(`Token Economics ${src?`<span class="badge">src: ${src}</span>`:''}`,`
    <div class="stat"><div class="stat-value">$${e.price_usd} <span style="font-size:16px">${pct(e.change_24h_pct)}</span></div>
    <div class="stat-sub">SOL/USD · vol 24h ${fmtUsd(e.volume_24h_usd)}</div></div><br>
-   ${kv('Market cap',fmtUsd(e.market_cap_usd))}
+   ${d.price_verification&&d.price_verification.verdict?kv('Cross-source check',`<span style="color:var(--${d.price_verification.spread_pct<0.1?'green':'gold'})">${d.price_verification.verdict}</span> ${d.price_verification.spread_pct}% / ${d.price_verification.sources_up} src`):''}
+    ${kv('Market cap',fmtUsd(e.market_cap_usd))}
    ${kv('Circulating supply',fmtN(Math.round(e.circulating_sol))+' SOL')}
    ${kv('Total supply',fmtN(Math.round(e.total_supply_sol))+' SOL')}`,'col-6');
 

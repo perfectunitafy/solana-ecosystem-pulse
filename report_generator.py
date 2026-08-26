@@ -11,6 +11,7 @@ from typing import Dict, Any
 
 from data_pipeline import SolanaDataPipeline, append_history_snapshot
 from anomaly_detector import AnomalyDetector
+from price_spread import fetch_all as fetch_spread_prices, analyze as analyze_spread
 
 BASE = Path(__file__).parent
 
@@ -107,6 +108,15 @@ def main():
     print("[2/4] Running anomaly detection engine...")
     detector = AnomalyDetector()
     anomalies = detector.analyze(data)
+
+    print("[2.5/4] Cross-source price verification (arbitrage spread)...")
+    try:
+        spread = analyze_spread(fetch_spread_prices())
+        data["price_verification"] = spread
+        if "error" not in spread:
+            data["economics"]["price_source"] += f" | cross-check: {spread['verdict']} ({spread['spread_pct']}% across {spread['sources_up']} sources)"
+    except Exception:
+        data["price_verification"] = {"error": "spread check failed"}
 
     combined = dict(data)
     combined["anomalies"] = anomalies
