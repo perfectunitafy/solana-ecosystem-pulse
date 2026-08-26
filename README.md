@@ -2,7 +2,7 @@
 
 Live, zero-key monitoring dashboard for the Solana Mainnet-Beta ecosystem: network performance, validator-set decentralization, token economics and DeFi TVL — aggregated every 15 seconds from public APIs only (no private API keys), with automated anomaly detection.
 
-**Live demo:** https://3b107d1fdff262.lhr.life/dashboard.html
+**Live demo:** https://fa86ea17eeb674.lhr.life/dashboard.html
 *(tunnel URL may rotate; serve locally with `python3 -m http.server 8081`)*
 
 ## UI variants

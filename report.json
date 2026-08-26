@@ -1,38 +1,38 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T07:34:44Z",
-    "timestamp": 1787729684,
+    "generated_at_utc": "2026-08-26T07:40:31Z",
+    "timestamp": 1787730031,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441818605,
-    "block_height": 419867130,
-    "slot_index": 314605,
+    "absolute_slot": 441819562,
+    "block_height": 419868087,
+    "slot_index": 315562,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 72.83,
-    "est_hours_remaining": 14.7,
-    "current_tps": 3148.9,
-    "avg_tps_30m": 3121.5,
-    "min_tps_30m": 2938.9,
-    "max_tps_30m": 3378.6,
+    "epoch_progress_pct": 73.05,
+    "est_hours_remaining": 14.6,
+    "current_tps": 3320.6,
+    "avg_tps_30m": 3133.1,
+    "min_tps_30m": 2934.0,
+    "max_tps_30m": 3405.6,
     "recent_tps_samples": [
-      3148.9,
-      3100.0,
-      2979.8,
-      2938.9,
-      3015.2,
-      2967.6,
-      3003.4,
-      3053.5,
-      3111.3,
-      3026.5,
-      2968.6,
-      3007.8,
-      3255.5,
-      2944.2,
-      3082.5
+      3320.6,
+      3312.6,
+      3331.2,
+      3281.1,
+      3174.9,
+      3170.5,
+      3073.7,
+      2985.6,
+      2934.0,
+      3004.7,
+      2964.4,
+      2989.7,
+      3090.3,
+      3131.5,
+      2991.9
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
@@ -84,13 +84,13 @@
     ]
   },
   "economics": {
-    "price_usd": 97.08,
+    "price_usd": 97.04,
     "change_24h_pct": -4.4,
-    "volume_24h_usd": 10642602300.27,
-    "market_cap_usd": 56634075301.58,
-    "price_source": "OKX | cross-check: MINOR_DRIFT (0.1547% across 3 sources)",
-    "total_supply_sol": 632859172.65,
-    "circulating_sol": 583375312.13,
+    "volume_24h_usd": 10628426784.75,
+    "market_cap_usd": 56610739997.98,
+    "price_source": "OKX | cross-check: MINOR_DRIFT (0.1237% across 3 sources)",
+    "total_supply_sol": 632859169.65,
+    "circulating_sol": 583375309.13,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
@@ -131,8 +131,8 @@
       {
         "name": "Binance CEX",
         "category": "CEX",
-        "tvl_solana_usd": 6602162203.48,
-        "change_1d": 6.45
+        "tvl_solana_usd": 6593565947.09,
+        "change_1d": 6.19
       },
       {
         "name": "Sanctum Validator LSTs",
@@ -155,8 +155,8 @@
       {
         "name": "Jupiter Lend",
         "category": "Lending",
-        "tvl_solana_usd": 1057385737.48,
-        "change_1d": -3.47
+        "tvl_solana_usd": 1056831295.51,
+        "change_1d": -3.91
       },
       {
         "name": "Bybit",
@@ -167,33 +167,31 @@
     ]
   },
   "price_verification": {
-    "timestamp": 1787729696,
+    "timestamp": 1787730042,
     "prices": {
-      "okx": 97.1,
-      "dexscreener": 97.1,
-      "coingecko": 96.95
+      "okx": 97.04,
+      "dexscreener": 96.99,
+      "coingecko": 97.11
     },
-    "spread_abs_usd": 0.15,
-    "spread_pct": 0.1547,
-    "avg_price": 97.05,
-    "outlier_sources": [
-      "coingecko"
-    ],
+    "spread_abs_usd": 0.12,
+    "spread_pct": 0.1237,
+    "avg_price": 97.047,
+    "outlier_sources": [],
     "sources_up": 3,
     "verdict": "MINOR_DRIFT"
   },
   "trends": {
-    "samples": 484,
-    "span_hours": 3.3,
+    "samples": 497,
+    "span_hours": 3.4,
     "tps": {
-      "sma_short": 3161.4,
-      "sma_long": 3214.2,
-      "trend_24h_proxy": "FALLING (-4.9%)",
+      "sma_short": 3172.9,
+      "sma_long": 3215.4,
+      "trend_24h_proxy": "FALLING (-4.4%)",
       "min": 2930.9,
       "max": 3789.5
     },
     "price": {
-      "trend": "STABLE (+0.0%)",
+      "trend": "STABLE (+0.4%)",
       "min": 96.31,
       "max": 97.3
     },
