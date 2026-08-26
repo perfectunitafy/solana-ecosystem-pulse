@@ -119,14 +119,14 @@ def main():
     except Exception:
         data["price_verification"] = {"error": "spread check failed"}
 
-    combined = dict(data)
-    combined["anomalies"] = anomalies
-
     print("[2.7/4] Trend analysis over history...")
     try:
         data["trends"] = trend_analyzer.analyze()
     except Exception:
         data["trends"] = {"error": "insufficient history"}
+
+    combined = dict(data)
+    combined["anomalies"] = anomalies
 
     print("[3/4] Writing machine-readable JSON...")
     json_path = BASE / "report.json"

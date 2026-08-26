@@ -1,23 +1,26 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T07:07:47Z",
-    "timestamp": 1787728067,
+    "generated_at_utc": "2026-08-26T07:10:31Z",
+    "timestamp": 1787728231,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441814169,
-    "block_height": 419862694,
-    "slot_index": 310169,
+    "absolute_slot": 441814617,
+    "block_height": 419863142,
+    "slot_index": 310617,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 71.8,
+    "epoch_progress_pct": 71.9,
     "est_hours_remaining": 15.2,
-    "current_tps": 3119.7,
-    "avg_tps_30m": 3276.1,
+    "current_tps": 3072.9,
+    "avg_tps_30m": 3242.0,
     "min_tps_30m": 3072.6,
-    "max_tps_30m": 3615.2,
+    "max_tps_30m": 3544.6,
     "recent_tps_samples": [
+      3072.9,
+      3196.9,
+      3332.5,
       3119.7,
       3253.6,
       3261.7,
@@ -29,10 +32,7 @@
       3211.6,
       3131.5,
       3218.1,
-      3362.4,
-      3212.2,
-      3397.3,
-      3264.4
+      3362.4
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
@@ -84,13 +84,13 @@
     ]
   },
   "economics": {
-    "price_usd": 97.0,
-    "change_24h_pct": -4.45,
-    "volume_24h_usd": 10743224508.53,
-    "market_cap_usd": 56587406584.17,
-    "price_source": "OKX | cross-check: COHERENT (0.0929% across 3 sources)",
-    "total_supply_sol": 632859186.13,
-    "circulating_sol": 583375325.61,
+    "price_usd": 96.86,
+    "change_24h_pct": -4.6,
+    "volume_24h_usd": 10724485843.18,
+    "market_cap_usd": 56505733905.89,
+    "price_source": "OKX | cross-check: MINOR_DRIFT (0.1344% across 3 sources)",
+    "total_supply_sol": 632859184.76,
+    "circulating_sol": 583375324.24,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
@@ -167,18 +167,71 @@
     ]
   },
   "price_verification": {
-    "timestamp": 1787728076,
+    "timestamp": 1787728240,
     "prices": {
-      "okx": 97.0,
-      "dexscreener": 96.99,
-      "coingecko": 96.91
+      "okx": 96.87,
+      "dexscreener": 96.75,
+      "coingecko": 96.88
     },
-    "spread_abs_usd": 0.09,
-    "spread_pct": 0.0929,
-    "avg_price": 96.967,
+    "spread_abs_usd": 0.13,
+    "spread_pct": 0.1344,
+    "avg_price": 96.833,
     "outlier_sources": [],
     "sources_up": 3,
-    "verdict": "COHERENT"
+    "verdict": "MINOR_DRIFT"
+  },
+  "trends": {
+    "samples": 426,
+    "span_hours": 2.9,
+    "tps": {
+      "sma_short": 3278.4,
+      "sma_long": 3269.5,
+      "trend_24h_proxy": "FALLING (-3.2%)",
+      "min": 2983.6,
+      "max": 3789.5
+    },
+    "price": {
+      "trend": "STABLE (+0.0%)",
+      "min": 96.31,
+      "max": 97.3
+    },
+    "validator_churn": {
+      "activation_events": 4,
+      "deactivation_events": 3,
+      "net_change": 1,
+      "events": [
+        {
+          "at": "2026-08-26T05:15:37Z",
+          "from": 684,
+          "to": 685,
+          "delta": 1
+        },
+        {
+          "at": "2026-08-26T05:48:14Z",
+          "from": 685,
+          "to": 684,
+          "delta": -1
+        },
+        {
+          "at": "2026-08-26T05:51:46Z",
+          "from": 684,
+          "to": 683,
+          "delta": -1
+        },
+        {
+          "at": "2026-08-26T05:52:10Z",
+          "from": 683,
+          "to": 684,
+          "delta": 1
+        },
+        {
+          "at": "2026-08-26T05:53:44Z",
+          "from": 684,
+          "to": 685,
+          "delta": 1
+        }
+      ]
+    }
   },
   "anomalies": {
     "overall_status": "HEALTHY",

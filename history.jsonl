@@ -416,3 +416,11 @@
 {"ts": 1787728039, "iso": "2026-08-26T07:07:19Z", "tps": 3119.7, "avg_tps_30m": 3276.1, "tvl_usd": 5599660725, "price_usd": 97.02, "validators": 685, "health": null}
 {"ts": 1787728062, "iso": "2026-08-26T07:07:42Z", "tps": 3119.7, "avg_tps_30m": 3276.1, "tvl_usd": 5599660725, "price_usd": 97.0, "validators": 685, "health": null}
 {"ts": 1787728067, "iso": "2026-08-26T07:07:47Z", "tps": 3119.7, "avg_tps_30m": 3276.1, "tvl_usd": 5599660725, "price_usd": 97.0, "validators": 685, "health": null}
+{"ts": 1787728087, "iso": "2026-08-26T07:08:07Z", "tps": 3332.5, "avg_tps_30m": 3274.0, "tvl_usd": 5599660725, "price_usd": 96.94, "validators": 685, "health": null}
+{"ts": 1787728110, "iso": "2026-08-26T07:08:30Z", "tps": 3332.5, "avg_tps_30m": 3274.0, "tvl_usd": 5599660725, "price_usd": 96.91, "validators": 685, "health": null}
+{"ts": 1787728134, "iso": "2026-08-26T07:08:54Z", "tps": 3332.5, "avg_tps_30m": 3274.0, "tvl_usd": 5599660725, "price_usd": 96.86, "validators": 685, "health": null}
+{"ts": 1787728158, "iso": "2026-08-26T07:09:18Z", "tps": 3196.9, "avg_tps_30m": 3260.1, "tvl_usd": 5599660725, "price_usd": 96.82, "validators": 685, "health": null}
+{"ts": 1787728182, "iso": "2026-08-26T07:09:42Z", "tps": 3196.9, "avg_tps_30m": 3260.1, "tvl_usd": 5599660725, "price_usd": 96.78, "validators": 685, "health": null}
+{"ts": 1787728199, "iso": "2026-08-26T07:09:59Z", "tps": 3072.9, "avg_tps_30m": 3242.0, "tvl_usd": 5599660725, "price_usd": 96.79, "validators": 685, "health": null}
+{"ts": 1787728206, "iso": "2026-08-26T07:10:06Z", "tps": 3072.9, "avg_tps_30m": 3242.0, "tvl_usd": 5599660725, "price_usd": 96.81, "validators": 685, "health": null}
+{"ts": 1787728231, "iso": "2026-08-26T07:10:31Z", "tps": 3072.9, "avg_tps_30m": 3242.0, "tvl_usd": 5599660725, "price_usd": 96.86, "validators": 685, "health": null}
