@@ -104,7 +104,6 @@ def main():
     print("[1/4] Aggregating on-chain + off-chain data...")
     pipeline = SolanaDataPipeline()
     data = pipeline.run_full_aggregation()
-    append_history_snapshot(data)  # time-series snapshot for dashboard charts
 
     print("[2/4] Running anomaly detection engine...")
     detector = AnomalyDetector()
@@ -127,6 +126,10 @@ def main():
 
     combined = dict(data)
     combined["anomalies"] = anomalies
+
+    combined_for_history = dict(data)
+    combined_for_history["anomalies"] = anomalies
+    append_history_snapshot(combined_for_history)  # snapshot with health score
 
     print("[3/4] Writing machine-readable JSON...")
     json_path = BASE / "report.json"
