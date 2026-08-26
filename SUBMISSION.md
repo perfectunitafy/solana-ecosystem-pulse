@@ -18,7 +18,7 @@ On top of the raw data sits a rule-based anomaly-detection engine that flags net
 *(tunnel may rotate; all dashboards are static files — serve locally with `python3 -m http.server 8081`)*
 
 ## GitHub
-https://github.com/<OWNER>/<REPO> *(← вставить актуальный URL)*
+https://github.com/perfectunitafy/solana-ecosystem-pulse
 
 ## Architecture
 ```

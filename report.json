@@ -1,17 +1,17 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T04:21:50Z",
-    "timestamp": 1787718110,
+    "generated_at_utc": "2026-08-26T04:22:16Z",
+    "timestamp": 1787718136,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441786818,
-    "block_height": 419835351,
-    "slot_index": 282818,
+    "absolute_slot": 441786886,
+    "block_height": 419835419,
+    "slot_index": 282886,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 65.47,
+    "epoch_progress_pct": 65.48,
     "est_hours_remaining": 18.6,
     "current_tps": 3213.5,
     "avg_tps_30m": 3438.7,
@@ -84,13 +84,13 @@
     ]
   },
   "economics": {
-    "price_usd": 97.05,
-    "change_24h_pct": -4.3,
-    "volume_24h_usd": 12152164826.21,
-    "market_cap_usd": 56616583866.59,
+    "price_usd": 97.06,
+    "change_24h_pct": -4.42,
+    "volume_24h_usd": 12142630594.47,
+    "market_cap_usd": 56622417598.4,
     "price_source": "OKX",
-    "total_supply_sol": 632859273.88,
-    "circulating_sol": 583375413.36,
+    "total_supply_sol": 632859273.65,
+    "circulating_sol": 583375413.13,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
