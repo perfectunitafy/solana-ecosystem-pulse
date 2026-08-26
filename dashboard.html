@@ -3,145 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solana Ecosystem Pulse — Live Dashboard</title>
+<title>Solana Ecosystem Pulse — Network Report</title>
 <style>
-:root{--bg:#06080d;--card:rgba(13,18,28,.92);--border:rgba(77,163,255,.2);--cyan:#00f0ff;--green:#06d6a0;--red:#ff477e;--gold:#ffd166;--text:#e2e8f0;--dim:#94a3b8;--purple:#a855f7}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,monospace;min-height:100vh;padding:20px}
-.header{text-align:center;margin-bottom:24px}
-.header h1{font-size:22px;font-weight:700;letter-spacing:.06em;color:var(--cyan)}
-.header p{font-size:11px;color:var(--dim);margin-top:6px}
-.status-bar{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:24px}
-.pill{background:var(--card);border:1px solid var(--border);padding:8px 16px;border-radius:20px;font-size:12px;display:flex;align-items:center;gap:8px}
-.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;max-width:1400px;margin:0 auto}
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;backdrop-filter:blur(10px)}
-.card h2{font-size:12px;text-transform:uppercase;color:var(--dim);letter-spacing:.1em;margin-bottom:14px;font-weight:600}
-.metric-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px}
-.metric-row:last-child{border:none}
-.metric-label{color:var(--dim)}
-.metric-value{font-weight:700;color:#fff}
-.big-number{font-size:34px;font-weight:800;color:var(--cyan);margin:4px 0 2px}
-.sub-text{font-size:11px;color:var(--dim)}
-.pos{color:var(--green)}.neg{color:var(--red)}.warn{color:var(--gold)}
-.anomaly-list{list-style:none}
-.anomaly-item{padding:9px 11px;background:rgba(255,71,126,.05);border-left:3px solid var(--red);border-radius:5px;margin-bottom:8px;font-size:12px;line-height:1.5}
-.anomaly-item.warning{background:rgba(255,209,102,.05);border-left-color:var(--gold)}
-.anomaly-ok{padding:12px;background:rgba(6,214,160,.07);border:1px solid rgba(6,214,160,.25);border-radius:8px;color:var(--green);font-size:12px;text-align:center}
-.health-circle{width:110px;height:110px;border-radius:50%;margin:0 auto 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:3px solid var(--green)}
-.health-num{font-size:32px;font-weight:800;color:var(--green)}
-.health-lbl{font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
-table{width:100%;border-collapse:collapse;font-size:12px}
-th{text-align:left;color:var(--dim);font-weight:500;padding:5px 4px;border-bottom:1px solid rgba(255,255,255,.08);font-size:10px;text-transform:uppercase;letter-spacing:.05em}
-td{padding:6px 4px;border-bottom:1px solid rgba(255,255,255,.03)}
-td.mono{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple)}
-.footer{text-align:center;margin-top:26px;font-size:10px;color:var(--dim);line-height:1.7}
-.refresh-info{position:fixed;top:14px;right:14px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:7px 13px;font-size:10px;color:var(--dim)}
-@media(max-width:640px){body{padding:12px}.big-number{font-size:26px}.grid{grid-template-columns:1fr}}
+/* Grafana/GitHub-style dark dashboard. Flat, dense, human. */
+:root{
+  --bg:#0d1117;--panel:#161b22;--border:#30363d;--border-light:#21262d;
+  --text:#c9d1d9;--text-bright:#f0f6fc;--dim:#8b949e;
+  --green:#3fb950;--red:#f85149;--gold:#d29922;--blue:#58a6ff;--purple:#bc8cff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.45;padding:16px 20px 40px;max-width:1280px;margin:0 auto}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header bar — like GitHub repo header */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.topbar h1{font-size:18px;font-weight:600;color:var(--text-bright)}
+.topbar h1 .pulse{color:var(--green)}
+.meta-line{font-size:12px;color:var(--dim)}
+.meta-line span{margin-right:14px}
+#clock{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+/* Status strip */
+.status-strip{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.chip{border:1px solid var(--border);background:var(--panel);border-radius:6px;padding:5px 11px;font-size:12.5px;display:inline-flex;align-items:center;gap:7px}
+.chip b{color:var(--text-bright);font-weight:600}
+.state-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.lbl{color:var(--dim)}
+
+/* Grid layout — Grafana style panels */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.panel-header{padding:9px 14px;border-bottom:1px solid var(--border-light);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--dim);display:flex;justify-content:space-between;align-items:center}
+.panel-body{padding:12px 14px}
+.col-3{grid-column:span 3}.col-4{grid-column:span 4}.col-6{grid-column:span 6}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+@media(max-width:1000px){.col-3,.col-4{grid-column:span 6}}
+@media(max-width:640px){.col-3,.col-4,.col-6,.col-8{grid-column:span 12}}
+
+/* Stat blocks (Grafana stat panel) */
+.stat{padding:4px 0}
+.stat-value{font-size:30px;font-weight:600;color:var(--text-bright);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;line-height:1.15}
+.stat-sub{font-size:12px;color:var(--dim);margin-top:2px}
+.delta-up{color:var(--green)}.delta-down{color:var(--red)}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:500;font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.3px;padding:6px 8px;border-bottom:1px solid var(--border)}
+td{padding:6px 8px;border-bottom:1px solid var(--border-light)}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(177,186,196,.04)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+.num{text-align:right;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.r{text-align:right}
+
+/* Anomalies */
+.anom{border-left:3px solid var(--red);background:rgba(248,81,73,.06);padding:8px 12px;margin-bottom:8px;font-size:13px;border-radius:0 4px 4px 0}
+.anom.warn{border-left-color:var(--gold);background:rgba(210,153,34,.06)}
+.anom .tag{font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.anom.crit .tag{color:var(--red)}.anom.warn .tag{color:var(--gold)}
+.all-clear{border:1px solid var(--border);border-radius:6px;padding:14px;text-align:center;color:var(--green);font-size:13px;background:rgba(63,185,80,.05)}
+
+/* Health gauge — simple horizontal bar instead of circle */
+.health-bar{height:8px;background:var(--border-light);border-radius:4px;overflow:hidden;margin:8px 0 6px}
+.health-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.kv{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px solid var(--border-light)}
+.kv:last-child{border:none}
+.kv .k{color:var(--dim)}
+.kv .v{font-weight:600;color:var(--text-bright);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px}
+
+.footer{margin-top:22px;padding-top:14px;border-top:1px solid var(--border);font-size:11.5px;color:var(--dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.badge{display:inline-block;padding:2px 8px;border:1px solid var(--border);border-radius:10px;font-size:10.5px;color:var(--dim);vertical-align:middle}
 </style>
 </head>
 <body>
-<div class="refresh-info" id="refreshInfo">⏳ Loading…</div>
 
-<div class="header">
-<h1>🌐 SOLANA ECOSYSTEM PULSE</h1>
-<p>Automated on-chain & off-chain telemetry · Zero private API keys</p>
+<div class="topbar">
+  <h1><span class="pulse">●</span> Solana Ecosystem Pulse</h1>
+  <div class="meta-line">
+    <span>mainnet-beta</span>
+    <span id="genTime">—</span>
+    <span id="clock" title="server time"></span>
+    <span id="nextUpd"></span>
+  </div>
 </div>
 
-<div class="status-bar" id="statusBar"></div>
+<div class="status-strip" id="strip"></div>
 
-<div class="grid" id="mainGrid"></div>
+<div class="grid" id="grid"></div>
 
 <div class="footer">
-Data sources: Solana JSON-RPC (public) · CoinGecko / Binance · DeFiLlama<br>
-Pipeline v1.0 · Auto-refresh every 60s · Built for Superteam Earn Bounty
+  <div>Sources: Solana JSON-RPC · OKX · DexScreener · DeFiLlama &nbsp;<span class="badge">no API keys</span></div>
+  <div>Pipeline v1.1 · cron 60s · client refresh 30s</div>
 </div>
 
 <script>
-let lastData=null;
-const fmtUsd=v=>v>=1e9?'$'+(v/1e9).toFixed(2)+'B':v>=1e6?'$'+(v/1e6).toFixed(2)+'M':'$'+v.toLocaleString(undefined,{maximumFractionDigits:2});
-const fmtNum=v=>typeof v==='number'?v.toLocaleString():v;
-const pct=v=>`<span class="${v>=0?'pos':'neg'}">${v>=0?'+':''}${v.toFixed(2)}%</span>`;
+const fmtUsd=v=>v>=1e9?'$'+(v/1e9).toFixed(2)+'B':v>=1e6?'$'+(v/1e6).toFixed(2)+'M':'$'+Math.round(v).toLocaleString();
+const fmtN=v=>Number(v).toLocaleString('en-US');
+const pct=(v,paren=true)=>{const c=v>=0?'delta-up':'delta-down';const s=`<span class="${c}">${v>=0?'+':''}${v.toFixed(2)}%</span>`;return paren?`(${s})`:s};
+const kv=(k,v)=>`<div class="kv"><span class="k">${k}</span><span class="v">${v}</span></div>`;
+let nextIn=30;
 
-function metricRow(l,v){return `<div class="metric-row"><span class="metric-label">${l}</span><span class="metric-value">${v}</span></div>`}
+function panel(title,body,cls){return `<div class="panel ${cls||'col-4'}"><div class="panel-header">${title}</div><div class="panel-body">${body}</div></div>`}
 
 function render(d){
  const n=d.network_performance,v=d.validators,e=d.economics,f=d.defi,a=d.anomalies;
- // status bar
- const stColor=a.overall_status==='HEALTHY'?'var(--green)':a.overall_status==='WARNING'?'var(--gold)':'var(--red)';
- document.getElementById('statusBar').innerHTML=`
-  <div class="pill"><span class="dot" style="background:${stColor}"></span>${a.overall_status}</div>
-  <div class="pill">⚡ ${n.current_tps.toLocaleString()} TPS</div>
-  <div class="pill">🔐 Nakamoto: <b>&nbsp;${v.nakamoto_coefficient}</b></div>
-  <div class="pill">💰 SOL $${e.price_usd} ${pct(e.change_24h_pct)}</div>
-  <div class="pill">🏦 TVL ${fmtUsd(f.tvl_usd)} ${pct(f.tvl_change_24h_pct)}</div>`;
- 
- let html='';
- // Anomalies card
- let anomHtml;
- if(a.anomalies.length===0){anomHtml='<div class="anomaly-ok">✅ No anomalies detected.<br>All network telemetry within optimal parameters.</div>'}
- else{anomHtml='<ul class="anomaly-list">'+a.anomalies.map(x=>`<li class="anomaly-item${x.severity==='WARNING'?' warning':''}"><b>[${x.severity}]</b> ${x.metric}: ${x.description}<br><code style="color:var(--cyan)">${x.value}</code></li>`).join('')+'</ul>'}
- 
- html+=`<div class="card"><h2>⚠ Anomaly Detection (${a.anomaly_count})</h2>${anomHtml}</div>`;
- 
- // Health score
+ document.getElementById('genTime').textContent='generated '+new Date(d.meta.generated_at_utc).toISOString().slice(11,19)+'Z';
+
+ // status chips
+ const stCol=a.overall_status==='HEALTHY'?'var(--green)':a.overall_status==='WARNING'?'var(--gold)':'var(--red)';
+ document.getElementById('strip').innerHTML=[
+  `<span class="chip"><span class="state-dot" style="background:${stCol}"></span>${a.overall_status} <b>${a.ecosystem_health_score}/100</b></span>`,
+  `<span class="chip"><span class="lbl">TPS</span> <b>${fmtN(n.current_tps)}</b></span>`,
+  `<span class="chip"><span class="lbl">Epoch</span> <b>#${n.epoch}</b> (${n.epoch_progress_pct}%)</span>`,
+  `<span class="chip"><span class="lbl">Validators</span> <b>${v.active_validators}</b></span>`,
+  `<span class="chip"><span class="lbl">SOL</span> <b>$${e.price_usd}</b> ${pct(e.change_24h_pct)}</span>`,
+  `<span class="chip"><span class="lbl">TVL</span> <b>${fmtUsd(f.tvl_usd)}</b> ${pct(f.tvl_change_24h_pct)}</span>`
+ ].join('');
+
+ let g='';
+ // Anomalies (left emphasis)
+ let an;
+ if(!a.anomalies.length) an='<div class="all-clear">No anomalies detected — all telemetry within thresholds.</div>';
+ else an=a.anomalies.map(x=>`<div class="anom ${x.severity==='WARNING'?'warn':'crit'}"><span class="tag">${x.severity}</span> ${x.metric} — ${x.value}<br><span style="color:var(--dim);font-size:12px">${x.description}</span></div>`).join('');
+ g+=panel(`Anomaly Detection <span class="badge">${a.anomaly_count} active</span>`,an,'col-8');
+
+ // Health
  const hc=a.ecosystem_health_score>=80?'var(--green)':a.ecosystem_health_score>=50?'var(--gold)':'var(--red)';
- html+=`<div class="card" style="text-align:center"><h2>Ecosystem Health Score</h2>
-  <div class="health-circle" style="border-color:${hc}"><div class="health-num" style="color:${hc}">${a.ecosystem_health_score}</div><div class="health-lbl">/ 100</div></div>
-  <div class="sub-text">Weighted penalty model: −30 CRITICAL · −10 WARNING</div></div>`;
- 
+ g+=`<div class="panel col-4"><div class="panel-header">Health Score</div><div class="panel-body">
+   <div class="stat"><div class="stat-value" style="color:${hc};font-size:40px">${a.ecosystem_health_score}<span style="font-size:16px;color:var(--dim)">/100</span></div></div>
+   <div class="health-bar"><div class="health-fill" style="width:${a.ecosystem_health_score}%;background:${hc}"></div></div>
+   <div class="stat-sub">−30 per CRITICAL · −10 per WARNING</div></div></div>`;
+
  // Network
- const tpsPct=n.current_tps?((n.current_tps-n.avg_tps_30m)/n.avg_tps_30m*100):0;
- html+=`<div class="card"><h2>⚡ Network Performance</h2>
-  <div class="big-number">${n.current_tps.toLocaleString()}<span style="font-size:14px;color:var(--dim)"> TPS</span></div>
-  <div class="sub-text">30m avg: ${n.avg_tps_30m.toLocaleString()} (${pct(tpsPct)} dev) · Range ${n.min_tps_30m.toLocaleString()}–${n.max_tps_30m.toLocaleString()}</div><br>
-  ${metricRow('Epoch','#'+n.epoch+' ('+n.epoch_progress_pct+'%)')}
-  ${metricRow('Epoch end','~'+n.est_hours_remaining+'h')}
-  ${metricRow('Absolute Slot',fmtNum(n.absolute_slot))}
-  ${metricRow('Block Height',fmtNum(n.block_height))}
-  ${metricRow('solana-core',n.solana_core_version)}</div>`;
- 
+ g+=panel('Network Performance',`
+   <div class="stat"><div class="stat-value">${fmtN(n.current_tps)}<span style="font-size:14px;color:var(--dim)"> TPS</span></div>
+   <div class="stat-sub">30m avg ${fmtN(n.avg_tps_30m)} · min ${fmtN(n.min_tps_30m)} · max ${fmtN(n.max_tps_30m)}</div></div><br>
+   ${kv('Epoch','#'+n.epoch+' — '+n.epoch_progress_pct+'%')}
+   ${kv('Est. epoch end','~'+n.est_hours_remaining+' h')}
+   ${kv('Slot',fmtN(n.slot_index)+' / '+fmtN(n.slots_in_epoch))}
+   ${kv('Absolute slot',fmtN(n.absolute_slot))}
+   ${kv('Block height',fmtN(n.block_height))}
+   ${kv('solana-core',n.solana_core_version)}`,'col-4');
+
  // Validators
- html+=`<div class="card"><h2>🔐 Validators & Decentralization</h2>
-  <div class="big-number">${v.active_validators}<span style="font-size:14px;color:var(--dim)"> active</span></div>
-  <div class="sub-text">Nakamoto Coefficient: <b style="color:var(--cyan)">${v.nakamoto_coefficient}</b> nodes to halt consensus</div><br>
-  ${metricRow('Delinquent',v.delinquent_validators+' ('+v.delinquent_stake_pct+'% stake)')}
-  ${metricRow('Total Active Stake',fmtNum(v.total_active_stake_sol)+' SOL')}<br>
-  <table><tr><th>#</th><th>Vote Pubkey</th><th>Stake %</th><th>Comm.</th></tr>`+
-  v.top_5_validators.map((x,i)=>`<tr><td>${i+1}</td><td class="mono">${x.vote_pubkey}</td><td>${x.stake_pct}%</td><td>${x.commission_pct}%</td></tr>`).join('')+
-  `</table></div>`;
- 
+ g+=panel('Validators & Decentralization',`
+   <div class="stat"><div class="stat-value">${v.active_validators}</div>
+   <div class="stat-sub">active · ${v.delinquent_validators} delinquent (${v.delinquent_stake_pct}% stake)</div></div><br>
+   ${kv('Nakamoto coefficient',v.nakamoto_coefficient)}
+   ${kv('Total active stake',fmtN(Math.round(v.total_active_stake_sol))+' SOL')}
+   <table style="margin-top:8px"><thead><tr><th>Top validators</th><th class="r">Stake %</th><th class="r">Comm</th></tr></thead><tbody>`+
+   v.top_5_validators.map(x=>`<tr><td class="mono" title="${x.vote_pubkey}">${x.vote_pubkey.slice(0,10)}…</td><td class="num">${x.stake_pct}%</td><td class="num">${x.commission_pct}%</td></tr>`).join('')+
+   `</tbody></table>`,'col-4');
+
  // Economics
- html+=`<div class="card"><h2>💰 Token Economics</h2>
-  <div class="big-number">$${e.price_usd}<span style="font-size:14px"> ${pct(e.change_24h_pct)}</span></div>
-  <div class="sub-text">SOL/USD · 24h volume ${fmtUsd(e.volume_24h_usd)}</div><br>
-  ${metricRow('Market Cap',fmtUsd(e.market_cap_usd))}
-  ${metricRow('Circulating Supply',fmtNum(Math.round(e.circulating_sol))+' SOL')}
-  ${metricRow('Total Supply',fmtNum(Math.round(e.total_supply_sol))+' SOL')}</div>`;
- 
+ const src=e.price_source||'';
+ g+=panel(`Token Economics ${src?`<span class="badge">src: ${src}</span>`:''}`,`
+   <div class="stat"><div class="stat-value">$${e.price_usd} <span style="font-size:16px">${pct(e.change_24h_pct)}</span></div>
+   <div class="stat-sub">SOL/USD · vol 24h ${fmtUsd(e.volume_24h_usd)}</div></div><br>
+   ${kv('Market cap',fmtUsd(e.market_cap_usd))}
+   ${kv('Circulating supply',fmtN(Math.round(e.circulating_sol))+' SOL')}
+   ${kv('Total supply',fmtN(Math.round(e.total_supply_sol))+' SOL')}`,'col-6');
+
  // DeFi
- let protos=f.top_protocols.map(p=>`<tr><td>${p.name}</td><td style="color:var(--dim)">${p.category}</td><td>${fmtUsd(p.tvl_solana_usd)}</td><td>${pct(p.change_1d)}</td></tr>`).join('');
- html+=`<div class="card"><h2>🏦 DeFi & TVL</h2>
-  <div class="big-number">${fmtUsd(f.tvl_usd)}<span style="font-size:14px"> ${pct(f.tvl_change_24h_pct)}/24h</span></div>
-  <div class="sub-text">7-day trend: ${pct(f.tvl_change_7d_pct)}</div><br>
-  <table><tr><th>Protocol</th><th>Cat.</th><th>TVL</th><th>24h</th></tr>${protos}</table></div>`;
- 
- document.getElementById('mainGrid').innerHTML=html;
- document.getElementById('refreshInfo').textContent='✓ Updated '+new Date(d.meta.generated_at_utc).toLocaleTimeString()+' UTC';
+ g+=panel('DeFi & TVL',`
+   <div class="stat"><div class="stat-value">${fmtUsd(f.tvl_usd)}</div>
+   <div class="stat-sub">24h ${pct(f.tvl_change_24h_pct,false)} · 7d ${pct(f.tvl_change_7d_pct,false)}</div></div>
+   <table style="margin-top:8px"><thead><tr><th>Protocol</th><th>Category</th><th class="r">TVL</th><th class="r">24h</th></tr></thead><tbody>`+
+   f.top_protocols.map(p=>`<tr><td>${p.name}</td><td style="color:var(--dim)">${p.category}</td><td class="num">${fmtUsd(p.tvl_solana_usd)}</td><td class="num r">${pct(p.change_1d)}</td></tr>`).join('')+
+   `</tbody></table>`,'col-6');
+
+ document.getElementById('grid').innerHTML=g;
 }
 
-async function loadData(){
+async function load(){
  try{
   const r=await fetch('report.json?t='+Date.now());
-  if(!r.ok)throw new Error('HTTP '+r.status);
-  const d=await r.json();
-  lastData=d;render(d);
- }catch(err){
-  document.getElementById('refreshInfo').textContent='⛔ '+err.message;
- }
+  if(!r.ok)throw new Error(r.status);
+  render(await r.json());
+ }catch(e){document.getElementById('nextUpd').textContent='fetch error: '+e.message}
 }
-loadData();
-setInterval(loadData,60000);
+load();setInterval(load,30000);
+setInterval(()=>{nextIn=nextIn<=0?30:nextIn-1;document.getElementById('nextUpd').textContent='refresh in '+nextIn+'s'},1000);
+setInterval(()=>{document.getElementById('clock').textContent=new Date().toISOString().slice(11,19)+' UTC'},1000);
 </script>
 </body>
 </html>

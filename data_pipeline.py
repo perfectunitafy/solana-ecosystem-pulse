@@ -21,12 +21,12 @@ SOLANA_RPCS = [
 ]
 
 DEFILLAMA_TVL_URL = "https://api.llama.fi/v2/historicalChainTvl/Solana"
-DEFILLAMA_CHAINS_URL = "https://api.llama.fi/v2/chains"
 DEFILLAMA_PROTOCOLS_URL = "https://api.llama.fi/protocols"
-COINGECKO_PRICE_URL = "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_24hr_vol=true&include_24hr_change=true&include_market_cap=true"
 
-# Fallback crypto price endpoint if CoinGecko rate-limits
-BINANCE_PRICE_URL = "https://api.binance.com/api/v3/ticker/24hr?symbol=SOLUSDT"
+# Keyless market-data sources (geo-friendly order): OKX -> DexScreener -> CoinGecko
+OKX_TICKER_URL = "https://www.okx.com/api/v5/market/ticker?instId=SOL-USDT"
+DEXSCREENER_SOL_URL = "https://api.dexscreener.com/latest/dex/tokens/So11111111111111111111111111111111111111112"
+COINGECKO_PRICE_URL = "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd"
 
 HEADERS = {"User-Agent": "SolanaEcosystemPulse/1.0 (OpenSource Bounty Edition)"}
 
@@ -177,33 +177,52 @@ class SolanaDataPipeline:
         circulating_sol = round(supply_val.get("circulating", 0) / 1e9, 2)
         non_circulating_sol = round(supply_val.get("nonCirculating", 0) / 1e9, 2)
         
-        # Fetch Price Data
-        cg_data = fetch_json(COINGECKO_PRICE_URL)
+        # Fetch Price Data — keyless cascade: OKX → DexScreener → CoinGecko
         price_usd = 0.0
         change_24h_pct = 0.0
         volume_24h_usd = 0.0
         market_cap_usd = 0.0
-        
-        if cg_data and "solana" in cg_data:
-            sol = cg_data["solana"]
-            price_usd = round(sol.get("usd", 0.0), 2)
-            change_24h_pct = round(sol.get("usd_24h_change", 0.0), 2)
-            volume_24h_usd = round(sol.get("usd_24h_vol", 0.0), 2)
-            market_cap_usd = round(sol.get("usd_market_cap", 0.0), 2)
-        else:
-            # Fallback to Binance
-            bin_data = fetch_json(BINANCE_PRICE_URL)
-            if bin_data:
-                price_usd = round(float(bin_data.get("lastPrice", 0.0)), 2)
-                change_24h_pct = round(float(bin_data.get("priceChangePercent", 0.0)), 2)
-                volume_24h_usd = round(float(bin_data.get("quoteVolume", 0.0)), 2)
+        price_source = "n/a"
+
+        okx = fetch_json(OKX_TICKER_URL)
+        if okx and okx.get("data"):
+            t = okx["data"][0]
+            last = float(t.get("last", 0) or 0)
+            open24h = float(t.get("open24h", 0) or 0)
+            vol24h = float(t.get("volCcy24h", 0) or 0)
+            if last > 0:
+                price_usd = round(last, 2)
+                change_24h_pct = round(((last - open24h) / open24h) * 100, 2) if open24h else 0.0
+                volume_24h_usd = round(vol24h * last, 2)
                 market_cap_usd = round(price_usd * circulating_sol, 2)
+                price_source = "OKX"
+
+        if price_usd == 0.0:
+            dx = fetch_json(DEXSCREENER_SOL_URL)
+            pairs = [p for p in (dx or {}).get("pairs", [])
+                     if p.get("quoteToken", {}).get("symbol") in ("USDC", "USDT")]
+            if pairs:
+                p = max(pairs, key=lambda x: float(x.get("liquidity", {}).get("usd") or 0))
+                price_usd = round(float(p.get("priceUsd") or 0), 2)
+                volume_24h_usd = round(float(p.get("volume", {}).get("h24") or 0), 2)
+                pc = p.get("priceChange", {}).get("h24")
+                change_24h_pct = round(float(pc), 2) if pc is not None else 0.0
+                market_cap_usd = round(price_usd * circulating_sol, 2)
+                price_source = "DexScreener"
+
+        if price_usd == 0.0:
+            cg = fetch_json(COINGECKO_PRICE_URL)
+            if cg and "solana" in cg:
+                price_usd = round(cg["solana"].get("usd", 0.0), 2)
+                market_cap_usd = round(price_usd * circulating_sol, 2)
+                price_source = "CoinGecko" 
 
         return {
             "price_usd": price_usd,
             "change_24h_pct": change_24h_pct,
             "volume_24h_usd": volume_24h_usd,
             "market_cap_usd": market_cap_usd,
+            "price_source": price_source,
             "total_supply_sol": total_supply_sol,
             "circulating_sol": circulating_sol,
             "non_circulating_sol": non_circulating_sol
