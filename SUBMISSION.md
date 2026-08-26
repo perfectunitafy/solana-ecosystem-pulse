@@ -21,10 +21,10 @@
 
 ### Links
 
-- 🔴 **Live demo:** https://fb165b4a4017c9.lhr.life/dashboard.html
+- 🔴 **Live demo:** https://9c89343c348cb2.lhr.life/dashboard.html
 - 📦 **Source:** https://github.com/perfectunitafy/solana-ecosystem-pulse
-- 📄 Sample reports: [/report.md](https://fb165b4a4017c9.lhr.life/report.md) · [/report.json](https://fb165b4a4017c9.lhr.life/report.json)
-- 🎨 Alt UI styles: [TUI](https://fb165b4a4017c9.lhr.life/dashboard_v2.html) · [Terminal Amber](https://fb165b4a4017c9.lhr.life/dashboard_v3.html)
+- 📄 Sample reports: [/report.md](https://9c89343c348cb2.lhr.life/report.md) · [/report.json](https://9c89343c348cb2.lhr.life/report.json)
+- 🎨 Alt UI styles: [TUI](https://9c89343c348cb2.lhr.life/dashboard_v2.html) · [Terminal Amber](https://9c89343c348cb2.lhr.life/dashboard_v3.html)
 
 ### Run it yourself
 

@@ -1,38 +1,38 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T05:44:19Z",
-    "timestamp": 1787723059,
+    "generated_at_utc": "2026-08-26T06:12:48Z",
+    "timestamp": 1787724768,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441800389,
-    "block_height": 419848918,
-    "slot_index": 296389,
+    "absolute_slot": 441805089,
+    "block_height": 419853614,
+    "slot_index": 301089,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 68.61,
-    "est_hours_remaining": 17.0,
-    "current_tps": 3502.6,
-    "avg_tps_30m": 3389.2,
-    "min_tps_30m": 3033.9,
-    "max_tps_30m": 3671.1,
+    "epoch_progress_pct": 69.7,
+    "est_hours_remaining": 16.4,
+    "current_tps": 3230.8,
+    "avg_tps_30m": 3320.3,
+    "min_tps_30m": 3023.8,
+    "max_tps_30m": 3620.1,
     "recent_tps_samples": [
-      3502.6,
-      3622.6,
-      3566.5,
-      3577.4,
-      3566.6,
-      3473.2,
-      3398.9,
-      3377.1,
-      3671.1,
-      3374.1,
-      3494.6,
-      3415.7,
-      3402.6,
-      3420.2,
-      3177.8
+      3230.8,
+      3102.2,
+      3023.8,
+      3151.1,
+      3228.3,
+      3193.2,
+      3186.3,
+      3165.4,
+      3214.3,
+      3272.1,
+      3393.3,
+      3445.9,
+      3476.2,
+      3393.4,
+      3235.3
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
@@ -84,19 +84,19 @@
     ]
   },
   "economics": {
-    "price_usd": 97.12,
-    "change_24h_pct": -4.51,
-    "volume_24h_usd": 11195142969.08,
-    "market_cap_usd": 56657415846.02,
+    "price_usd": 97.11,
+    "change_24h_pct": -4.33,
+    "volume_24h_usd": 11053468312.08,
+    "market_cap_usd": 56651580629.85,
     "price_source": "OKX",
-    "total_supply_sol": 632859229.61,
-    "circulating_sol": 583375369.09,
+    "total_supply_sol": 632859214.55,
+    "circulating_sol": 583375354.03,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
-    "tvl_usd": 5601289392,
-    "tvl_change_24h_pct": -2.37,
-    "tvl_change_7d_pct": 14.39,
+    "tvl_usd": 5599660725,
+    "tvl_change_24h_pct": -2.4,
+    "tvl_change_7d_pct": 14.35,
     "tvl_history_7d": [
       {
         "date": 1787184000,
@@ -120,11 +120,11 @@
       },
       {
         "date": 1787616000,
-        "tvl": 5737348082
+        "tvl": 5737289297
       },
       {
         "date": 1787702400,
-        "tvl": 5601289392
+        "tvl": 5599660725
       }
     ],
     "top_protocols": [
@@ -155,14 +155,14 @@
       {
         "name": "Jupiter Lend",
         "category": "Lending",
-        "tvl_solana_usd": 1058071153.62,
-        "change_1d": -3.35
+        "tvl_solana_usd": 1057385737.48,
+        "change_1d": -3.47
       },
       {
         "name": "Bybit",
         "category": "CEX",
-        "tvl_solana_usd": 1026006603.25,
-        "change_1d": 1.91
+        "tvl_solana_usd": 1022497303.73,
+        "change_1d": 2.0
       }
     ]
   },

@@ -3,5 +3,6 @@
 cd /home/administrator/solpulse-dashboard
 while true; do
   /home/administrator/.hermes/hermes-agent/venv/bin/python3 report_generator.py >> pipeline.log 2>&1
+  /home/administrator/.hermes/hermes-agent/venv/bin/python3 chart_builder.py >> pipeline.log 2>&1
   sleep 15
 done

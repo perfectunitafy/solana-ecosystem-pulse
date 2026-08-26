@@ -1,5 +1,5 @@
 # 🌐 Solana Ecosystem Pulse Report
-> **Generated:** 2026-08-26T05:44:19Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
+> **Generated:** 2026-08-26T06:12:48Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
 
 ## ⚠ Anomaly Detection (0)
 
@@ -9,13 +9,13 @@
 
 | Metric | Value |
 |---|---|
-| Current TPS | **3,502.6** |
-| Avg TPS (30m window) | 3,389.2 |
-| TPS Range (30m) | 3,033.9 – 3,671.1 |
-| Epoch | #1022 (68.61% complete) |
-| Est. epoch end | ~17.0h remaining |
-| Absolute Slot | 441,800,389 |
-| Block Height | 419,848,918 |
+| Current TPS | **3,230.8** |
+| Avg TPS (30m window) | 3,320.3 |
+| TPS Range (30m) | 3,023.8 – 3,620.1 |
+| Epoch | #1022 (69.7% complete) |
+| Est. epoch end | ~16.4h remaining |
+| Absolute Slot | 441,805,089 |
+| Block Height | 419,853,614 |
 | solana-core version | 4.2.0 |
 
 ## 🔐 Validator Set & Decentralization
@@ -41,17 +41,17 @@
 
 | Metric | Value |
 |---|---|
-| SOL Price | **$97.12** (-4.51% / 24h) |
-| Market Cap | $56.66B |
-| 24h Volume | $11.20B |
-| Circulating Supply | 583,375,369 SOL |
-| Total Supply | 632,859,230 SOL |
+| SOL Price | **$97.11** (-4.33% / 24h) |
+| Market Cap | $56.65B |
+| 24h Volume | $11.05B |
+| Circulating Supply | 583,375,354 SOL |
+| Total Supply | 632,859,215 SOL |
 
 ## 🏦 DeFi & TVL
 
 | Metric | Value |
 |---|---|
-| Solana Chain TVL | **$5.60B** (-2.37% / 24h, +14.39% / 7d) |
+| Solana Chain TVL | **$5.60B** (-2.40% / 24h, +14.35% / 7d) |
 
 ### Top Protocols on Solana (by TVL)
 
@@ -61,8 +61,8 @@
 | Sanctum Validator LSTs | Liquid Staking | $1.48B | -3.59% |
 | Kamino Lend | Lending | $1.18B | -4.12% |
 | Raydium AMM | Dexs | $1.06B | -0.62% |
-| Jupiter Lend | Lending | $1.06B | -3.35% |
-| Bybit | CEX | $1.03B | +1.91% |
+| Jupiter Lend | Lending | $1.06B | -3.47% |
+| Bybit | CEX | $1.02B | +2.00% |
 
 ---
 
