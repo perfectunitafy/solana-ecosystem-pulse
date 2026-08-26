@@ -1,5 +1,5 @@
 # 🌐 Solana Ecosystem Pulse Report
-> **Generated:** 2026-08-26T07:40:31Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
+> **Generated:** 2026-08-26T07:49:38Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
 
 ## ⚠ Anomaly Detection (0)
 
@@ -9,22 +9,22 @@
 
 | Metric | Value |
 |---|---|
-| Current TPS | **3,320.6** |
-| Avg TPS (30m window) | 3,133.1 |
-| TPS Range (30m) | 2,934.0 – 3,405.6 |
-| Epoch | #1022 (73.05% complete) |
-| Est. epoch end | ~14.6h remaining |
-| Absolute Slot | 441,819,562 |
-| Block Height | 419,868,087 |
+| Current TPS | **3,237.6** |
+| Avg TPS (30m window) | 3,159.0 |
+| TPS Range (30m) | 2,931.2 – 3,450.3 |
+| Epoch | #1022 (73.39% complete) |
+| Est. epoch end | ~14.4h remaining |
+| Absolute Slot | 441,821,063 |
+| Block Height | 419,869,588 |
 | solana-core version | 4.2.0 |
 
 ## 🔐 Validator Set & Decentralization
 
 | Metric | Value |
 |---|---|
-| Active Validators | **684** |
-| Delinquent Validators | 11 (0.281% of stake) |
-| Total Active Stake | 433,894,586 SOL |
+| Active Validators | **685** |
+| Delinquent Validators | 10 (0.044% of stake) |
+| Total Active Stake | 434,926,940 SOL |
 | **Nakamoto Coefficient** | **18** (min nodes to halt consensus) |
 
 ### Top 5 Validators by Active Stake
@@ -41,11 +41,11 @@
 
 | Metric | Value |
 |---|---|
-| SOL Price | **$97.04** (-4.40% / 24h) |
-| Market Cap | $56.61B |
-| 24h Volume | $10.63B |
-| Circulating Supply | 583,375,309 SOL |
-| Total Supply | 632,859,170 SOL |
+| SOL Price | **$97.03** (-3.67% / 24h) |
+| Market Cap | $56.60B |
+| 24h Volume | $10.53B |
+| Circulating Supply | 583,375,304 SOL |
+| Total Supply | 632,859,165 SOL |
 
 ## 🏦 DeFi & TVL
 

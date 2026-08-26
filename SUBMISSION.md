@@ -21,10 +21,10 @@
 
 ### Links
 
-- 🔴 **Live demo:** https://fa86ea17eeb674.lhr.life/dashboard.html
+- 🔴 **Live demo:** https://dynamic-guild-motherboard-phrases.trycloudflare.com/dashboard.html
 - 📦 **Source:** https://github.com/perfectunitafy/solana-ecosystem-pulse
-- 📄 Sample reports: [/report.md](https://fa86ea17eeb674.lhr.life/report.md) · [/report.json](https://fa86ea17eeb674.lhr.life/report.json)
-- 🎨 Alt UI styles: [TUI](https://fa86ea17eeb674.lhr.life/dashboard_v2.html) · [Terminal Amber](https://fa86ea17eeb674.lhr.life/dashboard_v3.html)
+- 📄 Sample reports: [/report.md](https://dynamic-guild-motherboard-phrases.trycloudflare.com/report.md) · [/report.json](https://dynamic-guild-motherboard-phrases.trycloudflare.com/report.json)
+- 🎨 Alt UI styles: [TUI](https://dynamic-guild-motherboard-phrases.trycloudflare.com/dashboard_v2.html) · [Terminal Amber](https://dynamic-guild-motherboard-phrases.trycloudflare.com/dashboard_v3.html)
 
 ### Run it yourself
 
