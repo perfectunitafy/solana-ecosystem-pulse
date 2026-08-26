@@ -180,6 +180,18 @@ function render(d){
    f.top_protocols.map(p=>`<tr><td>${p.name}</td><td style="color:var(--dim)">${p.category}</td><td class="num">${fmtUsd(p.tvl_solana_usd)}</td><td class="num r">${pct(p.change_1d)}</td></tr>`).join('')+
    `</tbody></table>`,'col-6');
 
+
+ // Trends card (from history)
+ let trendsHtml='';
+ const tr=d.trends;
+ if(tr&&!tr.error){
+   trendsHtml=kv('TPS trend',tr.tps.trend_24h_proxy)
+    +kv('TPS SMA short/long',fmtN(tr.tps.sma_short)+' / '+fmtN(tr.tps.sma_long))
+    +kv('Price trend',tr.price.trend)
+    +kv('Validator churn',`<span class="${tr.validator_churn.net_change>=0?'delta-up':'delta-down'}">${tr.validator_churn.net_change>=0?'+':''}${tr.validator_churn.net_change}</span> net (${tr.validator_churn.activation_events}↑/${tr.validator_churn.deactivation_events}↓)`)
+    +kv('History span',tr.span_hours+'h / '+tr.samples+' samples');
+ } else {trendsHtml='<span style="color:var(--dim)">accumulating history…</span>'}
+ g+=panel(`Trends & Churn <span class="badge">live history</span>`,trendsHtml,'col-4');
  document.getElementById('grid').innerHTML=g;
 }
 

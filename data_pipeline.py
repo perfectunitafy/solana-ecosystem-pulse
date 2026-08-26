@@ -74,14 +74,21 @@ HISTORY_MAX_POINTS = 5760  # ~24h at 15s interval
 def append_history_snapshot(data: Dict[str, Any]) -> None:
     """Appends a compact metrics snapshot to history.jsonl for time-series charts."""
     try:
+        # Sanity gate: skip snapshots from a fully failed aggregation pass
+        net_tps = data["network_performance"]["current_tps"]
+        px = data["economics"]["price_usd"]
+        val_n = data["validators"]["active_validators"]
+        if not (net_tps > 0 and px > 0 and val_n > 0):
+            return  # poisoned data — don't pollute the time series
         snap = {
             "ts": data["meta"]["timestamp"],
             "iso": data["meta"]["generated_at_utc"],
-            "tps": data["network_performance"]["current_tps"],
+            "tps": net_tps,
             "avg_tps_30m": data["network_performance"]["avg_tps_30m"],
             "tvl_usd": data["defi"]["tvl_usd"],
-            "price_usd": data["economics"]["price_usd"],
-            "validators": data["validators"]["active_validators"],
+            "price_usd": px,
+            "validators": val_n,
+            "health": data.get("anomalies", {}).get("ecosystem_health_score"),
         }
         base = Path(__file__).parent / HISTORY_FILE
         lines = []

@@ -12,6 +12,7 @@ from typing import Dict, Any
 from data_pipeline import SolanaDataPipeline, append_history_snapshot
 from anomaly_detector import AnomalyDetector
 from price_spread import fetch_all as fetch_spread_prices, analyze as analyze_spread
+import trend_analyzer
 
 BASE = Path(__file__).parent
 
@@ -120,6 +121,12 @@ def main():
 
     combined = dict(data)
     combined["anomalies"] = anomalies
+
+    print("[2.7/4] Trend analysis over history...")
+    try:
+        data["trends"] = trend_analyzer.analyze()
+    except Exception:
+        data["trends"] = {"error": "insufficient history"}
 
     print("[3/4] Writing machine-readable JSON...")
     json_path = BASE / "report.json"

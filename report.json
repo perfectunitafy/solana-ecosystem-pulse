@@ -1,38 +1,38 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T06:37:14Z",
-    "timestamp": 1787726234,
+    "generated_at_utc": "2026-08-26T07:07:47Z",
+    "timestamp": 1787728067,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441809118,
-    "block_height": 419857643,
-    "slot_index": 305118,
+    "absolute_slot": 441814169,
+    "block_height": 419862694,
+    "slot_index": 310169,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 70.63,
-    "est_hours_remaining": 15.9,
-    "current_tps": 3619.0,
-    "avg_tps_30m": 3213.5,
-    "min_tps_30m": 3016.3,
-    "max_tps_30m": 3690.6,
+    "epoch_progress_pct": 71.8,
+    "est_hours_remaining": 15.2,
+    "current_tps": 3119.7,
+    "avg_tps_30m": 3276.1,
+    "min_tps_30m": 3072.6,
+    "max_tps_30m": 3615.2,
     "recent_tps_samples": [
-      3619.0,
-      3419.9,
-      3114.7,
-      3165.9,
-      3292.1,
-      3690.6,
-      3304.1,
-      3201.6,
-      3128.6,
-      3016.3,
-      3068.9,
-      3216.0,
-      3296.7,
-      3334.8,
-      3357.5
+      3119.7,
+      3253.6,
+      3261.7,
+      3262.8,
+      3371.5,
+      3187.7,
+      3201.9,
+      3309.1,
+      3211.6,
+      3131.5,
+      3218.1,
+      3362.4,
+      3212.2,
+      3397.3,
+      3264.4
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
@@ -84,13 +84,13 @@
     ]
   },
   "economics": {
-    "price_usd": 96.62,
-    "change_24h_pct": -4.46,
-    "volume_24h_usd": 10811092680.67,
-    "market_cap_usd": 56365725501.53,
-    "price_source": "OKX | cross-check: MINOR_DRIFT (0.1035% across 3 sources)",
-    "total_supply_sol": 632859202.08,
-    "circulating_sol": 583375341.56,
+    "price_usd": 97.0,
+    "change_24h_pct": -4.45,
+    "volume_24h_usd": 10743224508.53,
+    "market_cap_usd": 56587406584.17,
+    "price_source": "OKX | cross-check: COHERENT (0.0929% across 3 sources)",
+    "total_supply_sol": 632859186.13,
+    "circulating_sol": 583375325.61,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
@@ -137,20 +137,20 @@
       {
         "name": "Sanctum Validator LSTs",
         "category": "Liquid Staking",
-        "tvl_solana_usd": 1475039720.28,
-        "change_1d": -3.59
+        "tvl_solana_usd": 1473748946.32,
+        "change_1d": -3.68
       },
       {
         "name": "Kamino Lend",
         "category": "Lending",
-        "tvl_solana_usd": 1180525179.08,
-        "change_1d": -4.12
+        "tvl_solana_usd": 1179929935.84,
+        "change_1d": -4.62
       },
       {
         "name": "Raydium AMM",
         "category": "Dexs",
-        "tvl_solana_usd": 1063225371.23,
-        "change_1d": -0.62
+        "tvl_solana_usd": 1064801546.1,
+        "change_1d": -3.81
       },
       {
         "name": "Jupiter Lend",
@@ -167,18 +167,18 @@
     ]
   },
   "price_verification": {
-    "timestamp": 1787726245,
+    "timestamp": 1787728076,
     "prices": {
-      "okx": 96.62,
-      "dexscreener": 96.64,
-      "coingecko": 96.72
+      "okx": 97.0,
+      "dexscreener": 96.99,
+      "coingecko": 96.91
     },
-    "spread_abs_usd": 0.1,
-    "spread_pct": 0.1035,
-    "avg_price": 96.66,
+    "spread_abs_usd": 0.09,
+    "spread_pct": 0.0929,
+    "avg_price": 96.967,
     "outlier_sources": [],
     "sources_up": 3,
-    "verdict": "MINOR_DRIFT"
+    "verdict": "COHERENT"
   },
   "anomalies": {
     "overall_status": "HEALTHY",
