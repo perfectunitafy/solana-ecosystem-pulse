@@ -1,49 +1,49 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T09:04:11Z",
-    "timestamp": 1787735051,
+    "generated_at_utc": "2026-08-26T09:35:41Z",
+    "timestamp": 1787736941,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441833321,
-    "block_height": 419881842,
-    "slot_index": 329321,
+    "absolute_slot": 441838518,
+    "block_height": 419887039,
+    "slot_index": 334518,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 76.23,
-    "est_hours_remaining": 12.8,
-    "current_tps": 3160.8,
-    "avg_tps_30m": 3254.9,
-    "min_tps_30m": 2971.0,
-    "max_tps_30m": 3470.8,
+    "epoch_progress_pct": 77.43,
+    "est_hours_remaining": 12.2,
+    "current_tps": 3344.3,
+    "avg_tps_30m": 3365.6,
+    "min_tps_30m": 3081.7,
+    "max_tps_30m": 3646.4,
     "recent_tps_samples": [
-      3160.8,
-      3470.8,
-      3267.9,
-      3309.0,
-      3413.1,
-      3154.5,
-      3144.5,
-      3191.7,
-      3377.1,
-      3227.2,
-      3392.1,
-      3372.7,
-      3210.5,
-      3186.7,
-      3199.5
+      3344.3,
+      3568.8,
+      3329.9,
+      3644.6,
+      3471.2,
+      3482.7,
+      3404.9,
+      3320.7,
+      3440.1,
+      3471.9,
+      3378.3,
+      3533.2,
+      3483.6,
+      3646.4,
+      3536.4
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
   },
   "validators": {
-    "active_validators": 685,
-    "delinquent_validators": 10,
+    "active_validators": 686,
+    "delinquent_validators": 9,
     "total_validators": 695,
-    "total_active_stake_sol": 434926939.8,
-    "total_delinquent_stake_sol": 191163.98,
-    "delinquent_stake_pct": 0.044,
+    "total_active_stake_sol": 435018049.48,
+    "total_delinquent_stake_sol": 100054.3,
+    "delinquent_stake_pct": 0.023,
     "nakamoto_coefficient": 18,
     "top_5_validators": [
       {
@@ -84,19 +84,19 @@
     ]
   },
   "economics": {
-    "price_usd": 96.98,
-    "change_24h_pct": -3.15,
-    "volume_24h_usd": 9740839156.54,
-    "market_cap_usd": 56575733229.76,
-    "price_source": "OKX | cross-check: COHERENT (0.0826% across 3 sources)",
-    "total_supply_sol": 632859125.83,
-    "circulating_sol": 583375265.31,
+    "price_usd": 96.4,
+    "change_24h_pct": -3.96,
+    "volume_24h_usd": 9662776932.58,
+    "market_cap_usd": 56237373942.87,
+    "price_source": "OKX | cross-check: COHERENT (0.0311% across 3 sources)",
+    "total_supply_sol": 632859108.89,
+    "circulating_sol": 583375248.37,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
-    "tvl_usd": 5599301665,
-    "tvl_change_24h_pct": -2.41,
-    "tvl_change_7d_pct": 14.35,
+    "tvl_usd": 5599818765,
+    "tvl_change_24h_pct": -2.4,
+    "tvl_change_7d_pct": 14.36,
     "tvl_history_7d": [
       {
         "date": 1787184000,
@@ -124,7 +124,7 @@
       },
       {
         "date": 1787702400,
-        "tvl": 5599301665
+        "tvl": 5599818765
       }
     ],
     "top_protocols": [
@@ -143,8 +143,8 @@
       {
         "name": "Kamino Lend",
         "category": "Lending",
-        "tvl_solana_usd": 1179929935.84,
-        "change_1d": -4.62
+        "tvl_solana_usd": 1181821811.27,
+        "change_1d": -4.22
       },
       {
         "name": "Raydium AMM",
@@ -155,8 +155,8 @@
       {
         "name": "Jupiter Lend",
         "category": "Lending",
-        "tvl_solana_usd": 1056831295.51,
-        "change_1d": -3.91
+        "tvl_solana_usd": 1056007829.65,
+        "change_1d": -3.69
       },
       {
         "name": "Bybit",
@@ -167,45 +167,39 @@
     ]
   },
   "price_verification": {
-    "timestamp": 1787735062,
+    "timestamp": 1787736950,
     "prices": {
-      "okx": 96.98,
-      "dexscreener": 96.93,
-      "coingecko": 96.9
+      "okx": 96.4,
+      "dexscreener": 96.37,
+      "coingecko": 96.39
     },
-    "spread_abs_usd": 0.08,
-    "spread_pct": 0.0826,
-    "avg_price": 96.937,
+    "spread_abs_usd": 0.03,
+    "spread_pct": 0.0311,
+    "avg_price": 96.387,
     "outlier_sources": [],
     "sources_up": 3,
     "verdict": "COHERENT"
   },
   "trends": {
-    "samples": 697,
-    "span_hours": 4.8,
+    "samples": 771,
+    "span_hours": 5.3,
     "tps": {
-      "sma_short": 3274.3,
-      "sma_long": 3240.2,
-      "trend_24h_proxy": "FALLING (-2.6%)",
+      "sma_short": 3275.5,
+      "sma_long": 3260.5,
+      "trend_24h_proxy": "FALLING (-1.9%)",
       "min": 2930.9,
       "max": 3789.5
     },
     "price": {
-      "trend": "STABLE (+0.4%)",
-      "min": 96.31,
+      "trend": "STABLE (+0.3%)",
+      "min": 96.28,
       "max": 97.37
     },
     "validator_churn": {
-      "activation_events": 5,
+      "activation_events": 6,
       "deactivation_events": 4,
-      "net_change": 1,
+      "net_change": 2,
       "events": [
-        {
-          "at": "2026-08-26T05:51:46Z",
-          "from": 684,
-          "to": 683,
-          "delta": -1
-        },
         {
           "at": "2026-08-26T05:52:10Z",
           "from": 683,
@@ -228,6 +222,12 @@
           "at": "2026-08-26T07:41:49Z",
           "from": 684,
           "to": 685,
+          "delta": 1
+        },
+        {
+          "at": "2026-08-26T09:26:04Z",
+          "from": 685,
+          "to": 686,
           "delta": 1
         }
       ]
