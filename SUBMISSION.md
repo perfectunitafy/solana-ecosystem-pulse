@@ -1,46 +1,54 @@
-# Superteam Canada Earn Submission — Solana Ecosystem Pulse
+# Solana Ecosystem Pulse — Bounty Submission Draft
 
-> **Draft — Влад: проверь ссылки и тон перед публикацией.**
+> **Bounty:** [Develop Solana Ecosystem Auto-Updating Report & Interactive Dashboard](https://superteam.fun/earn/listing/develop-solana-ecosystem-auto-updating-report-and-interactive-dashboard) — Superteam Canada, prize pool $1,000 USDG
+>
+> **Status:** DRAFT — finalize before submit (deadline Sep 1, 2026 03:59 UTC)
 
-## Title
-Solana Ecosystem Pulse — Real-Time Zero-Key Network & DeFi Monitor
+---
 
-## What we built
-A live monitoring dashboard for Solana Mainnet-Beta that aggregates network performance, validator-set decentralization, token economics and DeFi TVL every 15 seconds — using **only public, keyless APIs** (Solana public JSON-RPC with multi-endpoint failover, DeFiLlama, OKX/DexScreener/CoinGecko cascade). No private API keys, no paid tiers, nothing to configure.
+## Submission Text (for the Earn form)
 
-On top of the raw data sits a rule-based anomaly-detection engine that flags network irregularities (TPS drops, delinquent-validator spikes, TVL shocks) and computes a 0–100 ecosystem health score.
+**Solana Ecosystem Pulse** is a fully autonomous, zero-key telemetry pipeline that continuously monitors Solana network health, validator decentralization, market data, and DeFi TVL — and renders it as a live dark-theme dashboard with built-in anomaly detection.
 
-## Live demo
-- Default UI (Grafana-style): https://d5f3f47e8e06ee.lhr.life/dashboard.html
-- Terminal UI (btop/k9s aesthetic): https://d5f3f47e8e06ee.lhr.life/dashboard_v2.html
-- Financial-terminal UI (Bloomberg-like): https://d5f3f47e8e06ee.lhr.life/dashboard_v3.html
+### What's inside
 
-*(tunnel may rotate; all dashboards are static files — serve locally with `python3 -m http.server 8081`)*
+- **Data layer:** public Solana JSON-RPC (3-endpoint failover: mainnet-beta / extrnode / ankr), OKX + DexScreener + CoinGecko price cascade, DeFiLlama historical TVL. **No private API keys anywhere.**
+- **Analytics:** true TPS from `getRecentPerformanceSamples` (not inflated vote-TX counts), Nakamoto Coefficient computed live from stake distribution, delinquent-stake tracking, epoch progression with ETA.
+- **Anomaly engine:** 5 threshold-based checks (TPS degradation, validator delinquency, stake centralization, SOL volatility, TVL migration) producing a weighted 0–100 Health Score.
+- **Outputs:** interactive dashboard (3 UI styles), human-readable `report.md`, machine-readable `report.json` — exactly per bounty spec.
+- **Automation:** pipeline loop every 15s; browser refreshes every 10s. History accumulates to JSONL for time-series charts.
+- **Resilience:** multi-RPC failover, price-source cascade with live source badge, graceful degradation when any upstream fails.
 
-## GitHub
-https://github.com/perfectunitafy/solana-ecosystem-pulse
+### Links
 
-## Architecture
+- 🔴 **Live demo:** https://fb165b4a4017c9.lhr.life/dashboard.html
+- 📦 **Source:** https://github.com/perfectunitafy/solana-ecosystem-pulse
+- 📄 Sample reports: [/report.md](https://fb165b4a4017c9.lhr.life/report.md) · [/report.json](https://fb165b4a4017c9.lhr.life/report.json)
+- 🎨 Alt UI styles: [TUI](https://fb165b4a4017c9.lhr.life/dashboard_v2.html) · [Terminal Amber](https://fb165b4a4017c9.lhr.life/dashboard_v3.html)
+
+### Run it yourself
+
+```bash
+git clone https://github.com/perfectunitafy/solana-ecosystem-pulse && cd solana-ecosystem-pulse
+python3 report_generator.py          # one full pipeline pass → report.json + report.md
+python3 -m http.server 8080          # serve dashboard
+# open http://localhost:8080/dashboard.html
 ```
-data_pipeline.py     → keyless aggregation (RPC failover, price-source cascade)
-anomaly_detector.py  → rule engine + health score
-report_generator.py  → report.json / report.md + rolling time-series (history.jsonl)
-pipeline_loop.sh     → 15s loop daemon
-dashboard*.html      → three dependency-free UI themes (vanilla JS + Canvas)
-```
 
-## Key features the jury should notice
-1. **True TPS** computed from `getRecentPerformanceSamples`, not node-reported averages; min/avg/max over a 30-minute window.
-2. **Decentralization metrics**: active/delinquent validators, delinquent stake %, total stake, **Nakamoto coefficient**, top-5 validators by stake.
-3. **Anomaly detection** with severity levels and an explainable health score.
-4. **Rolling 24h time-series**: one snapshot per pipeline cycle into `history.jsonl`, rendered as lightweight Canvas charts in all three UIs.
-5. **Three complete UI designs** for the same data — zero external JS libraries, single static HTML files each.
-6. **Zero configuration / zero keys** — clone and run with Python stdlib only.
+Pure Python stdlib + vanilla JS. No dependencies. No build step.
 
-## Stack
-Python 3 (stdlib only) · vanilla HTML/CSS/JS · Canvas · bash. No frameworks, no build step.
+---
 
-## Roadmap (post-bounty)
-- WebSocket subscription for sub-second updates
-- Alert webhooks (Telegram/Discord)
-- Jito MEV tips & priority-fee market metrics
+## Pre-Submit Checklist
+
+- [ ] Live demo URL responds 200 on all pages (dashboard, v2, v3, report.md, report.json)
+- [ ] GitHub repo is public, README has current screenshots/description
+- [ ] `history.jsonl` has accumulated meaningful data (>24h of samples) — mention in submission if yes
+- [ ] Final read-through of submission text (word count ≤300 for the summary field)
+- [ ] Wallet connected on Earn, profile page loads without client-side error
+- [ ] Submit before deadline; screenshot confirmation
+
+## Notes
+
+- Tunnel URLs are ephemeral (localhost.run free tier). If the demo link dies before judging: regenerate tunnel and update links everywhere (`grep -rl "lhr.life" .`).
+- Consider pinning key files via GitHub gist as backup evidence of history data.

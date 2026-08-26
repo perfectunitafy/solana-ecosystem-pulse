@@ -1,49 +1,49 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T04:22:16Z",
-    "timestamp": 1787718136,
+    "generated_at_utc": "2026-08-26T05:09:20Z",
+    "timestamp": 1787720960,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441786886,
-    "block_height": 419835419,
-    "slot_index": 282886,
+    "absolute_slot": 441794636,
+    "block_height": 419843165,
+    "slot_index": 290636,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 65.48,
-    "est_hours_remaining": 18.6,
-    "current_tps": 3213.5,
-    "avg_tps_30m": 3438.7,
-    "min_tps_30m": 3119.9,
-    "max_tps_30m": 3638.7,
+    "epoch_progress_pct": 67.28,
+    "est_hours_remaining": 17.7,
+    "current_tps": 3381.0,
+    "avg_tps_30m": 3415.9,
+    "min_tps_30m": 3066.9,
+    "max_tps_30m": 3795.9,
     "recent_tps_samples": [
-      3213.5,
-      3344.1,
-      3414.3,
-      3382.9,
-      3447.0,
-      3119.9,
-      3295.8,
-      3318.2,
-      3338.3,
-      3310.4,
-      3608.3,
-      3621.7,
-      3638.7,
-      3356.1,
-      3500.9
+      3381.0,
+      3507.9,
+      3712.6,
+      3643.5,
+      3582.0,
+      3381.6,
+      3515.3,
+      3110.9,
+      3473.7,
+      3309.5,
+      3352.5,
+      3795.9,
+      3538.6,
+      3479.3,
+      3268.7
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
   },
   "validators": {
-    "active_validators": 684,
-    "delinquent_validators": 11,
+    "active_validators": 685,
+    "delinquent_validators": 10,
     "total_validators": 695,
-    "total_active_stake_sol": 434587890.23,
-    "total_delinquent_stake_sol": 530213.54,
-    "delinquent_stake_pct": 0.122,
+    "total_active_stake_sol": 434926939.8,
+    "total_delinquent_stake_sol": 191163.98,
+    "delinquent_stake_pct": 0.044,
     "nakamoto_coefficient": 18,
     "top_5_validators": [
       {
@@ -84,19 +84,19 @@
     ]
   },
   "economics": {
-    "price_usd": 97.06,
-    "change_24h_pct": -4.42,
-    "volume_24h_usd": 12142630594.47,
-    "market_cap_usd": 56622417598.4,
+    "price_usd": 96.49,
+    "change_24h_pct": -5.35,
+    "volume_24h_usd": 11619968379.46,
+    "market_cap_usd": 56289891180.4,
     "price_source": "OKX",
-    "total_supply_sol": 632859273.65,
-    "circulating_sol": 583375413.13,
+    "total_supply_sol": 632859248.44,
+    "circulating_sol": 583375387.92,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
-    "tvl_usd": 5599591688,
-    "tvl_change_24h_pct": -2.4,
-    "tvl_change_7d_pct": 14.35,
+    "tvl_usd": 5600673001,
+    "tvl_change_24h_pct": -2.38,
+    "tvl_change_7d_pct": 14.37,
     "tvl_history_7d": [
       {
         "date": 1787184000,
@@ -120,19 +120,19 @@
       },
       {
         "date": 1787616000,
-        "tvl": 5737058397
+        "tvl": 5737058388
       },
       {
         "date": 1787702400,
-        "tvl": 5599591688
+        "tvl": 5600673001
       }
     ],
     "top_protocols": [
       {
         "name": "Binance CEX",
         "category": "CEX",
-        "tvl_solana_usd": 6552879623.97,
-        "change_1d": 6.76
+        "tvl_solana_usd": 6586416265.69,
+        "change_1d": 6.33
       },
       {
         "name": "Sanctum Validator LSTs",
