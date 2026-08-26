@@ -61,3 +61,18 @@ Own telemetry (continuous pipeline): network TPS averaged 3,303 over 4h window (
 - [ ] Jupiter aggregator share estimate (route sampling)
 - [ ] Get Raydium CLMM pool-level detail (why 254K txns on one pool?)
 - [ ] Format per bounty requirements (check exact deliverable format)
+
+---
+
+## Appendix A: Jupiter Route Sampling (live, Aug 26)
+
+How the aggregator routes SOL→USDC at different sizes (slippage 50bps default):
+
+| Size | Effective price | Impact | Hops | Route |
+|---|---|---|---|---|
+| 1 SOL | $96.950 | 0.0000% | 1 | Quantum |
+| 100 SOL | $96.943 | 0.0047% | 3 | Aquifer → Quantum → Scorch |
+| 1,000 SOL | $96.936 | 0.0114% | 3 | Aquifer → TesseraV → BisonFi |
+| 10,000 SOL | $96.885 | 0.0659% | 4 | Scorch → Scorch → Aquifer → TesseraV |
+
+**Insight:** even a $1M market order moves SOL/USDC by only 0.066% thanks to multi-hop splitting across concentrated-liquidity pools. The "which DEX has the best price" question is answered algorithmically per-trade; humans choosing a venue are competing with routers that fragment every order optimally. Note also how the venue names change entirely between sizes — liquidity is deeply fragmented and the aggregator is the real market.

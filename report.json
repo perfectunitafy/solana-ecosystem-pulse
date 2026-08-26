@@ -1,38 +1,38 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T08:36:27Z",
-    "timestamp": 1787733387,
+    "generated_at_utc": "2026-08-26T09:04:11Z",
+    "timestamp": 1787735051,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441828765,
-    "block_height": 419877290,
-    "slot_index": 324765,
+    "absolute_slot": 441833321,
+    "block_height": 419881842,
+    "slot_index": 329321,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 75.18,
-    "est_hours_remaining": 13.4,
-    "current_tps": 3152.8,
-    "avg_tps_30m": 3210.7,
-    "min_tps_30m": 3032.7,
-    "max_tps_30m": 3443.6,
+    "epoch_progress_pct": 76.23,
+    "est_hours_remaining": 12.8,
+    "current_tps": 3160.8,
+    "avg_tps_30m": 3254.9,
+    "min_tps_30m": 2971.0,
+    "max_tps_30m": 3470.8,
     "recent_tps_samples": [
-      3152.8,
-      3262.1,
-      3259.0,
-      3162.1,
-      3139.4,
-      3250.6,
-      3058.8,
-      3032.7,
-      3191.8,
-      3102.9,
-      3218.2,
-      3105.9,
-      3156.9,
-      3177.1,
-      3271.2
+      3160.8,
+      3470.8,
+      3267.9,
+      3309.0,
+      3413.1,
+      3154.5,
+      3144.5,
+      3191.7,
+      3377.1,
+      3227.2,
+      3392.1,
+      3372.7,
+      3210.5,
+      3186.7,
+      3199.5
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
@@ -84,19 +84,19 @@
     ]
   },
   "economics": {
-    "price_usd": 97.16,
-    "change_24h_pct": -3.8,
-    "volume_24h_usd": 9887576494.93,
-    "market_cap_usd": 56680742178.57,
-    "price_source": "OKX | cross-check: COHERENT (0.0412% across 3 sources)",
-    "total_supply_sol": 632859140.25,
-    "circulating_sol": 583375279.73,
+    "price_usd": 96.98,
+    "change_24h_pct": -3.15,
+    "volume_24h_usd": 9740839156.54,
+    "market_cap_usd": 56575733229.76,
+    "price_source": "OKX | cross-check: COHERENT (0.0826% across 3 sources)",
+    "total_supply_sol": 632859125.83,
+    "circulating_sol": 583375265.31,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
-    "tvl_usd": 5600096453,
-    "tvl_change_24h_pct": -2.39,
-    "tvl_change_7d_pct": 14.36,
+    "tvl_usd": 5599301665,
+    "tvl_change_24h_pct": -2.41,
+    "tvl_change_7d_pct": 14.35,
     "tvl_history_7d": [
       {
         "date": 1787184000,
@@ -124,7 +124,7 @@
       },
       {
         "date": 1787702400,
-        "tvl": 5600096453
+        "tvl": 5599301665
       }
     ],
     "top_protocols": [
@@ -167,31 +167,31 @@
     ]
   },
   "price_verification": {
-    "timestamp": 1787733396,
+    "timestamp": 1787735062,
     "prices": {
-      "okx": 97.17,
-      "dexscreener": 97.15,
-      "coingecko": 97.13
+      "okx": 96.98,
+      "dexscreener": 96.93,
+      "coingecko": 96.9
     },
-    "spread_abs_usd": 0.04,
-    "spread_pct": 0.0412,
-    "avg_price": 97.15,
+    "spread_abs_usd": 0.08,
+    "spread_pct": 0.0826,
+    "avg_price": 96.937,
     "outlier_sources": [],
     "sources_up": 3,
     "verdict": "COHERENT"
   },
   "trends": {
-    "samples": 630,
-    "span_hours": 4.3,
+    "samples": 697,
+    "span_hours": 4.8,
     "tps": {
-      "sma_short": 3262.9,
-      "sma_long": 3243.7,
-      "trend_24h_proxy": "FALLING (-3.0%)",
+      "sma_short": 3274.3,
+      "sma_long": 3240.2,
+      "trend_24h_proxy": "FALLING (-2.6%)",
       "min": 2930.9,
       "max": 3789.5
     },
     "price": {
-      "trend": "STABLE (+0.0%)",
+      "trend": "STABLE (+0.4%)",
       "min": 96.31,
       "max": 97.37
     },
