@@ -1,49 +1,49 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T11:05:51Z",
-    "timestamp": 1787742351,
+    "generated_at_utc": "2026-08-26T11:36:54Z",
+    "timestamp": 1787744214,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441853324,
-    "block_height": 419901841,
-    "slot_index": 349324,
+    "absolute_slot": 441858402,
+    "block_height": 419906919,
+    "slot_index": 354402,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 80.86,
-    "est_hours_remaining": 10.3,
-    "current_tps": 3781.1,
-    "avg_tps_30m": 3754.2,
-    "min_tps_30m": 3239.6,
-    "max_tps_30m": 4210.7,
+    "epoch_progress_pct": 82.04,
+    "est_hours_remaining": 9.7,
+    "current_tps": 3281.5,
+    "avg_tps_30m": 3578.3,
+    "min_tps_30m": 3248.7,
+    "max_tps_30m": 4026.7,
     "recent_tps_samples": [
-      3781.1,
-      3931.9,
-      3486.1,
-      3373.1,
-      3390.6,
-      3671.4,
-      3637.4,
-      3532.8,
-      3427.5,
-      3616.7,
-      3671.7,
-      3322.2,
-      3239.6,
-      3496.4,
-      3844.0
+      3281.5,
+      3248.7,
+      3285.5,
+      3317.0,
+      3294.1,
+      3732.4,
+      3572.9,
+      3792.2,
+      3703.8,
+      3762.4,
+      3833.2,
+      3873.7,
+      3898.4,
+      4026.7,
+      3914.2
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
   },
   "validators": {
-    "active_validators": 686,
-    "delinquent_validators": 9,
+    "active_validators": 685,
+    "delinquent_validators": 10,
     "total_validators": 695,
-    "total_active_stake_sol": 435018049.48,
-    "total_delinquent_stake_sol": 100054.3,
-    "delinquent_stake_pct": 0.023,
+    "total_active_stake_sol": 434463863.26,
+    "total_delinquent_stake_sol": 654240.51,
+    "delinquent_stake_pct": 0.15,
     "nakamoto_coefficient": 18,
     "top_5_validators": [
       {
@@ -84,13 +84,13 @@
     ]
   },
   "economics": {
-    "price_usd": 97.54,
-    "change_24h_pct": -2.04,
-    "volume_24h_usd": 9810474675.42,
-    "market_cap_usd": 56902416595.41,
-    "price_source": "OKX | cross-check: MINOR_DRIFT (0.1231% across 3 sources)",
-    "total_supply_sol": 632859056.29,
-    "circulating_sol": 583375195.77,
+    "price_usd": 97.06,
+    "change_24h_pct": -2.06,
+    "volume_24h_usd": 9471054224.0,
+    "market_cap_usd": 56622394780.56,
+    "price_source": "OKX | cross-check: MINOR_DRIFT (0.2679% across 3 sources)",
+    "total_supply_sol": 632859038.56,
+    "circulating_sol": 583375178.04,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
@@ -131,14 +131,14 @@
       {
         "name": "Binance CEX",
         "category": "CEX",
-        "tvl_solana_usd": 6576903119.73,
-        "change_1d": 6.25
+        "tvl_solana_usd": 6516188268.98,
+        "change_1d": 6.86
       },
       {
         "name": "Sanctum Validator LSTs",
         "category": "Liquid Staking",
-        "tvl_solana_usd": 1471958454.65,
-        "change_1d": -3.81
+        "tvl_solana_usd": 1471525612.86,
+        "change_1d": -2.71
       },
       {
         "name": "Kamino Lend",
@@ -149,8 +149,8 @@
       {
         "name": "Raydium AMM",
         "category": "Dexs",
-        "tvl_solana_usd": 1064801546.1,
-        "change_1d": -3.81
+        "tvl_solana_usd": 1066654573.16,
+        "change_1d": -3.9
       },
       {
         "name": "Jupiter Lend",
@@ -167,57 +167,41 @@
     ]
   },
   "price_verification": {
-    "timestamp": 1787742364,
+    "timestamp": 1787744223,
     "prices": {
-      "okx": 97.53,
-      "dexscreener": 97.46,
-      "coingecko": 97.58
+      "okx": 97.06,
+      "dexscreener": 97.32,
+      "coingecko": 97.22
     },
-    "spread_abs_usd": 0.12,
-    "spread_pct": 0.1231,
-    "avg_price": 97.523,
-    "outlier_sources": [],
+    "spread_abs_usd": 0.26,
+    "spread_pct": 0.2679,
+    "avg_price": 97.2,
+    "outlier_sources": [
+      "okx"
+    ],
     "sources_up": 3,
     "verdict": "MINOR_DRIFT"
   },
   "trends": {
-    "samples": 983,
-    "span_hours": 6.8,
+    "samples": 1059,
+    "span_hours": 7.3,
     "tps": {
-      "sma_short": 3637.2,
-      "sma_long": 3456.5,
-      "trend_24h_proxy": "RISING (+5.1%)",
+      "sma_short": 3655.8,
+      "sma_long": 3486.3,
+      "trend_24h_proxy": "RISING (+6.0%)",
       "min": 2930.9,
       "max": 4315.1
     },
     "price": {
-      "trend": "STABLE (+0.1%)",
+      "trend": "STABLE (+0.2%)",
       "min": 95.89,
       "max": 97.85
     },
     "validator_churn": {
-      "activation_events": 12,
-      "deactivation_events": 11,
-      "net_change": 2,
+      "activation_events": 13,
+      "deactivation_events": 13,
+      "net_change": 1,
       "events": [
-        {
-          "at": "2026-08-26T10:38:18Z",
-          "from": 685,
-          "to": 686,
-          "delta": 1
-        },
-        {
-          "at": "2026-08-26T10:46:09Z",
-          "from": 686,
-          "to": 685,
-          "delta": -1
-        },
-        {
-          "at": "2026-08-26T10:48:19Z",
-          "from": 685,
-          "to": 684,
-          "delta": -1
-        },
         {
           "at": "2026-08-26T10:55:17Z",
           "from": 684,
@@ -229,6 +213,24 @@
           "from": 685,
           "to": 686,
           "delta": 1
+        },
+        {
+          "at": "2026-08-26T11:09:57Z",
+          "from": 686,
+          "to": 685,
+          "delta": -1
+        },
+        {
+          "at": "2026-08-26T11:13:56Z",
+          "from": 685,
+          "to": 686,
+          "delta": 1
+        },
+        {
+          "at": "2026-08-26T11:34:55Z",
+          "from": 686,
+          "to": 685,
+          "delta": -1
         }
       ]
     }

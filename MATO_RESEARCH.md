@@ -61,6 +61,8 @@ Running a continuous pipeline (500+ snapshots over multiple days):
 
 ---
 
+![Live telemetry: TPS, SOL price, TVL change — 981 snapshots over 6.8h from our own continuously-running pipeline](docs/mato_telemetry_chart.png)
+
 ## Practical takeaways
 
 **If you're choosing where to execute:** your router already optimizes better than you can. Choose on MEV protection and UX, not headline TVL.

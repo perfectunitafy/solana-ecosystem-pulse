@@ -1,5 +1,5 @@
 # 🌐 Solana Ecosystem Pulse Report
-> **Generated:** 2026-08-26T11:05:51Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
+> **Generated:** 2026-08-26T11:36:54Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
 
 ## ⚠ Anomaly Detection (0)
 
@@ -9,22 +9,22 @@
 
 | Metric | Value |
 |---|---|
-| Current TPS | **3,781.1** |
-| Avg TPS (30m window) | 3,754.2 |
-| TPS Range (30m) | 3,239.6 – 4,210.7 |
-| Epoch | #1022 (80.86% complete) |
-| Est. epoch end | ~10.3h remaining |
-| Absolute Slot | 441,853,324 |
-| Block Height | 419,901,841 |
+| Current TPS | **3,281.5** |
+| Avg TPS (30m window) | 3,578.3 |
+| TPS Range (30m) | 3,248.7 – 4,026.7 |
+| Epoch | #1022 (82.04% complete) |
+| Est. epoch end | ~9.7h remaining |
+| Absolute Slot | 441,858,402 |
+| Block Height | 419,906,919 |
 | solana-core version | 4.2.0 |
 
 ## 🔐 Validator Set & Decentralization
 
 | Metric | Value |
 |---|---|
-| Active Validators | **686** |
-| Delinquent Validators | 9 (0.023% of stake) |
-| Total Active Stake | 435,018,049 SOL |
+| Active Validators | **685** |
+| Delinquent Validators | 10 (0.15% of stake) |
+| Total Active Stake | 434,463,863 SOL |
 | **Nakamoto Coefficient** | **18** (min nodes to halt consensus) |
 
 ### Top 5 Validators by Active Stake
@@ -41,11 +41,11 @@
 
 | Metric | Value |
 |---|---|
-| SOL Price | **$97.54** (-2.04% / 24h) |
-| Market Cap | $56.90B |
-| 24h Volume | $9.81B |
-| Circulating Supply | 583,375,196 SOL |
-| Total Supply | 632,859,056 SOL |
+| SOL Price | **$97.06** (-2.06% / 24h) |
+| Market Cap | $56.62B |
+| 24h Volume | $9.47B |
+| Circulating Supply | 583,375,178 SOL |
+| Total Supply | 632,859,039 SOL |
 
 ## 🏦 DeFi & TVL
 
@@ -57,10 +57,10 @@
 
 | Protocol | Category | TVL | 24h Δ |
 |---|---|---|---|
-| Binance CEX | CEX | $6.58B | +6.25% |
-| Sanctum Validator LSTs | Liquid Staking | $1.47B | -3.81% |
+| Binance CEX | CEX | $6.52B | +6.86% |
+| Sanctum Validator LSTs | Liquid Staking | $1.47B | -2.71% |
 | Kamino Lend | Lending | $1.18B | -3.81% |
-| Raydium AMM | Dexs | $1.06B | -3.81% |
+| Raydium AMM | Dexs | $1.07B | -3.90% |
 | Jupiter Lend | Lending | $1.05B | -3.44% |
 | Bybit | CEX | $1.02B | +2.35% |
 
