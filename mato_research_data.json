@@ -1,0 +1,459 @@
+{
+ "collected_at": "2026-08-26T08:15Z",
+ "sources": {
+  "dexscreener_solana_top20": [
+   {
+    "dex": "orca",
+    "pair": "SOL/USDC",
+    "price_usd": 97.11,
+    "vol24h": 193942993.64,
+    "vol6h": 23533667.02,
+    "vol1h": 3418801.89,
+    "buys_h24": 49305,
+    "sells_h24": 48059,
+    "liquidity_usd": 25421507.4,
+    "price_change_24h": -3.75
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDC",
+    "price_usd": 97.36,
+    "vol24h": 16908387.58,
+    "vol6h": 2329470.79,
+    "vol1h": 263507.4,
+    "buys_h24": 139309,
+    "sells_h24": 114802,
+    "liquidity_usd": 13301282.6,
+    "price_change_24h": -3.77
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDC",
+    "price_usd": 97.13,
+    "vol24h": 674028.8,
+    "vol6h": 145204.48,
+    "vol1h": 25054.81,
+    "buys_h24": 131057,
+    "sells_h24": 133061,
+    "liquidity_usd": 491757.42,
+    "price_change_24h": -3.74
+   },
+   {
+    "dex": "meteora",
+    "pair": "SOL/USDC",
+    "price_usd": 97.1,
+    "vol24h": 69868161.03,
+    "vol6h": 8091127.2,
+    "vol1h": 1248159.07,
+    "buys_h24": 12151,
+    "sells_h24": 11559,
+    "liquidity_usd": 5429819.65,
+    "price_change_24h": -3.84
+   },
+   {
+    "dex": "meteora",
+    "pair": "SOL/USDC",
+    "price_usd": 97.14,
+    "vol24h": 1753008.44,
+    "vol6h": 197152.04,
+    "vol1h": 29577.63,
+    "buys_h24": 16315,
+    "sells_h24": 13595,
+    "liquidity_usd": 1471198.42,
+    "price_change_24h": -3.76
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDC",
+    "price_usd": 97.15,
+    "vol24h": 31998465.53,
+    "vol6h": 4991372.04,
+    "vol1h": 782551.69,
+    "buys_h24": 26044,
+    "sells_h24": 24554,
+    "liquidity_usd": 6380664.42,
+    "price_change_24h": -3.75
+   },
+   {
+    "dex": "meteora",
+    "pair": "SOL/USDC",
+    "price_usd": 97.11,
+    "vol24h": 22752181.53,
+    "vol6h": 2189932.78,
+    "vol1h": 401562.26,
+    "buys_h24": 34134,
+    "sells_h24": 30383,
+    "liquidity_usd": 827665.69,
+    "price_change_24h": -3.8
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDT",
+    "price_usd": 97.14,
+    "vol24h": 7031666.89,
+    "vol6h": 877475.34,
+    "vol1h": 149243.27,
+    "buys_h24": 57385,
+    "sells_h24": 50112,
+    "liquidity_usd": 1021117.5,
+    "price_change_24h": -3.79
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDC",
+    "price_usd": 97.15,
+    "vol24h": 1402445.82,
+    "vol6h": 158610.2,
+    "vol1h": 29611.84,
+    "buys_h24": 27938,
+    "sells_h24": 25007,
+    "liquidity_usd": 372154.95,
+    "price_change_24h": -3.74
+   },
+   {
+    "dex": "orca",
+    "pair": "SOL/USDC",
+    "price_usd": 97.13,
+    "vol24h": 405836.62,
+    "vol6h": 43595.19,
+    "vol1h": 7129.87,
+    "buys_h24": 27764,
+    "sells_h24": 24910,
+    "liquidity_usd": 130949.74,
+    "price_change_24h": -3.76
+   },
+   {
+    "dex": "meteora",
+    "pair": "SOL/USDC",
+    "price_usd": 97.34,
+    "vol24h": 6767.14,
+    "vol6h": 535.65,
+    "vol1h": 50.18,
+    "buys_h24": 881,
+    "sells_h24": 718,
+    "liquidity_usd": 90112.76,
+    "price_change_24h": -3.33
+   },
+   {
+    "dex": "orca",
+    "pair": "SOL/USDT",
+    "price_usd": 97.14,
+    "vol24h": 407732.42,
+    "vol6h": 49199.82,
+    "vol1h": 7607.29,
+    "buys_h24": 18901,
+    "sells_h24": 17323,
+    "liquidity_usd": 571966.61,
+    "price_change_24h": -3.77
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDC",
+    "price_usd": 97.14,
+    "vol24h": 255388.97,
+    "vol6h": 26132.13,
+    "vol1h": 3430.72,
+    "buys_h24": 9288,
+    "sells_h24": 7102,
+    "liquidity_usd": 388863.82,
+    "price_change_24h": -3.75
+   },
+   {
+    "dex": "orca",
+    "pair": "SOL/USDC",
+    "price_usd": 97.2,
+    "vol24h": 121329.9,
+    "vol6h": 13866.58,
+    "vol1h": 1955.75,
+    "buys_h24": 9065,
+    "sells_h24": 7498,
+    "liquidity_usd": 218640.14,
+    "price_change_24h": -3.65
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDT",
+    "price_usd": 97.46,
+    "vol24h": 417019.76,
+    "vol6h": 83173.15,
+    "vol1h": 12287.74,
+    "buys_h24": 5679,
+    "sells_h24": 6001,
+    "liquidity_usd": 720815.39,
+    "price_change_24h": -3.82
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDT",
+    "price_usd": 97.16,
+    "vol24h": 74901.4,
+    "vol6h": 8944.74,
+    "vol1h": 1139.2,
+    "buys_h24": 5658,
+    "sells_h24": 5156,
+    "liquidity_usd": 102927,
+    "price_change_24h": -3.75
+   },
+   {
+    "dex": "raydium",
+    "pair": "SOL/USDT",
+    "price_usd": 97.15,
+    "vol24h": 186133.67,
+    "vol6h": 22256.57,
+    "vol1h": 3104.63,
+    "buys_h24": 18992,
+    "sells_h24": 17014,
+    "liquidity_usd": 78478.03,
+    "price_change_24h": -3.8
+   },
+   {
+    "dex": "orca",
+    "pair": "SOL/USDC",
+    "price_usd": 97.13,
+    "vol24h": 25481.34,
+    "vol6h": 3873.5,
+    "vol1h": 680.18,
+    "buys_h24": 8775,
+    "sells_h24": 8799,
+    "liquidity_usd": 11142.82,
+    "price_change_24h": -3.75
+   },
+   {
+    "dex": "meteora",
+    "pair": "SOL/USDC",
+    "price_usd": 97.21,
+    "vol24h": 10193005.91,
+    "vol6h": 989188.14,
+    "vol1h": 123834.31,
+    "buys_h24": 2287,
+    "sells_h24": 1904,
+    "liquidity_usd": 3185414.62,
+    "price_change_24h": -3.63
+   },
+   {
+    "dex": "meteora",
+    "pair": "SOL/USDC",
+    "price_usd": 97.14,
+    "vol24h": 1192294.04,
+    "vol6h": 164993.71,
+    "vol1h": 19885.88,
+    "buys_h24": 3734,
+    "sells_h24": 3052,
+    "liquidity_usd": 187120.01,
+    "price_change_24h": -3.69
+   }
+  ],
+  "llama_solana_protocols_top30": [
+   {
+    "name": "Binance CEX",
+    "category": "CEX",
+    "tvl": 6593565947.0,
+    "change_1d": 6.194280146206225,
+    "change_7d": 24.96458786103713
+   },
+   {
+    "name": "Sanctum Validator LSTs",
+    "category": "Liquid Staking",
+    "tvl": 1473748946.0,
+    "change_1d": -3.6750896782621396,
+    "change_7d": 28.243102891206036
+   },
+   {
+    "name": "Kamino Lend",
+    "category": "Lending",
+    "tvl": 1179929936.0,
+    "change_1d": -4.618165835232929,
+    "change_7d": 10.415613368710524
+   },
+   {
+    "name": "Raydium AMM",
+    "category": "Dexs",
+    "tvl": 1064801546.0,
+    "change_1d": -3.8055617705639264,
+    "change_7d": 24.48060186038606
+   },
+   {
+    "name": "Jupiter Lend",
+    "category": "Lending",
+    "tvl": 1056831296.0,
+    "change_1d": -3.91263401042157,
+    "change_7d": 10.880822331365607
+   },
+   {
+    "name": "Bybit",
+    "category": "CEX",
+    "tvl": 1024294293.0,
+    "change_1d": 2.0580483904856663,
+    "change_7d": 17.107425381139223
+   },
+   {
+    "name": "Binance Staked SOL",
+    "category": "Liquid Staking",
+    "tvl": 996728406.0,
+    "change_1d": -3.8579770318996225,
+    "change_7d": 28.420828748178707
+   },
+   {
+    "name": "Bitget",
+    "category": "CEX",
+    "tvl": 991887521.0,
+    "change_1d": 1.1837217807228626,
+    "change_7d": 17.673767456838547
+   },
+   {
+    "name": "Jito Liquid Staking",
+    "category": "Liquid Staking",
+    "tvl": 973500746.0,
+    "change_1d": -4.8028504267233245,
+    "change_7d": 26.56387648560559
+   },
+   {
+    "name": "BlackRock BUIDL",
+    "category": "RWA",
+    "tvl": 876383297.0,
+    "change_1d": 4.143928787230905,
+    "change_7d": 1.1618859724391797
+   },
+   {
+    "name": "OKX",
+    "category": "CEX",
+    "tvl": 786626987.0,
+    "change_1d": -0.4752686796446568,
+    "change_7d": 13.841183303920857
+   },
+   {
+    "name": "Jupiter Perpetual Exchange",
+    "category": "Derivatives",
+    "tvl": 751369012.0,
+    "change_1d": -3.4600550331288673,
+    "change_7d": 9.619695273520534
+   },
+   {
+    "name": "MEXC",
+    "category": "CEX",
+    "tvl": 726029120.0,
+    "change_1d": 1.923127572401711,
+    "change_7d": 8.623449446124283
+   },
+   {
+    "name": "Jupiter Staked SOL",
+    "category": "Liquid Staking",
+    "tvl": 503577666.0,
+    "change_1d": -4.054634007930318,
+    "change_7d": 26.3849512880913
+   },
+   {
+    "name": "Gate",
+    "category": "CEX",
+    "tvl": 464803657.0,
+    "change_1d": 2.122365519662722,
+    "change_7d": 17.979343585417354
+   },
+   {
+    "name": "xStocks",
+    "category": "RWA",
+    "tvl": 428948002.0,
+    "change_1d": 0.8058211746256205,
+    "change_7d": 12.600349100563776
+   },
+   {
+    "name": "Marinade Native",
+    "category": "Staking Pool",
+    "tvl": 381091697.0,
+    "change_1d": -0.9022240784807565,
+    "change_7d": 78.87389954251717
+   },
+   {
+    "name": "Sentora",
+    "category": "Risk Curators",
+    "tvl": 363084441.0,
+    "change_1d": -0.418273037861951,
+    "change_7d": 7.6080260084034705
+   },
+   {
+    "name": "KuCoin",
+    "category": "CEX",
+    "tvl": 358588325.0,
+    "change_1d": 2.9976455318514894,
+    "change_7d": 14.748107301149815
+   },
+   {
+    "name": "Backpack",
+    "category": "CEX",
+    "tvl": 352395550.0,
+    "change_1d": 0.7436901283312665,
+    "change_7d": 8.306930715643588
+   },
+   {
+    "name": "PumpSwap",
+    "category": "Dexs",
+    "tvl": 329161781.0,
+    "change_1d": -1.1496021551701574,
+    "change_7d": 27.65476739996913
+   },
+   {
+    "name": "Solstice",
+    "category": "Basis Trading",
+    "tvl": 302999553.0,
+    "change_1d": -24.810303659502154,
+    "change_7d": -40.14174630443389
+   },
+   {
+    "name": "OnRe",
+    "category": "RWA",
+    "tvl": 277402742.0,
+    "change_1d": 0.4304282942530193,
+    "change_7d": 2.968099409881802
+   },
+   {
+    "name": "Drift Staked SOL",
+    "category": "Liquid Staking",
+    "tvl": 273167072.0,
+    "change_1d": -4.632202439364278,
+    "change_7d": 26.489538520227157
+   },
+   {
+    "name": "Orca DEX",
+    "category": "Dexs",
+    "tvl": 261853542.0,
+    "change_1d": -0.2784170550017251,
+    "change_7d": 7.777329060837076
+   },
+   {
+    "name": "Marinade Liquid Staking",
+    "category": "Liquid Staking",
+    "tvl": 231759866.0,
+    "change_1d": -4.629885836692665,
+    "change_7d": 25.56994800622205
+   },
+   {
+    "name": "Huma Finance V2",
+    "category": "Yield",
+    "tvl": 225413414.0,
+    "change_1d": -0.14966459080541483,
+    "change_7d": 3.64237328818173
+   },
+   {
+    "name": "Meteora DLMM",
+    "category": "Dexs",
+    "tvl": 209434786.0,
+    "change_1d": -3.8909168206212144,
+    "change_7d": 22.146082198463375
+   },
+   {
+    "name": "Sanctum Infinity",
+    "category": "Dexs",
+    "tvl": 189031639.0,
+    "change_1d": -4.834466944625248,
+    "change_7d": 20.329155538745795
+   },
+   {
+    "name": "Marinade Select",
+    "category": "Staking Pool",
+    "tvl": 180681843.0,
+    "change_1d": -4.626898795708726,
+    "change_7d": 26.68232334064284
+   }
+  ]
+ }
+}
