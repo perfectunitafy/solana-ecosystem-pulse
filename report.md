@@ -1,5 +1,5 @@
 # 🌐 Solana Ecosystem Pulse Report
-> **Generated:** 2026-08-26T05:09:20Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
+> **Generated:** 2026-08-26T05:44:19Z · **Pipeline:** v1.0.0 · 🟢 Status: **HEALTHY** (Health: 100/100)
 
 ## ⚠ Anomaly Detection (0)
 
@@ -9,13 +9,13 @@
 
 | Metric | Value |
 |---|---|
-| Current TPS | **3,381.0** |
-| Avg TPS (30m window) | 3,415.9 |
-| TPS Range (30m) | 3,066.9 – 3,795.9 |
-| Epoch | #1022 (67.28% complete) |
-| Est. epoch end | ~17.7h remaining |
-| Absolute Slot | 441,794,636 |
-| Block Height | 419,843,165 |
+| Current TPS | **3,502.6** |
+| Avg TPS (30m window) | 3,389.2 |
+| TPS Range (30m) | 3,033.9 – 3,671.1 |
+| Epoch | #1022 (68.61% complete) |
+| Est. epoch end | ~17.0h remaining |
+| Absolute Slot | 441,800,389 |
+| Block Height | 419,848,918 |
 | solana-core version | 4.2.0 |
 
 ## 🔐 Validator Set & Decentralization
@@ -41,28 +41,28 @@
 
 | Metric | Value |
 |---|---|
-| SOL Price | **$96.49** (-5.35% / 24h) |
-| Market Cap | $56.29B |
-| 24h Volume | $11.62B |
-| Circulating Supply | 583,375,388 SOL |
-| Total Supply | 632,859,248 SOL |
+| SOL Price | **$97.12** (-4.51% / 24h) |
+| Market Cap | $56.66B |
+| 24h Volume | $11.20B |
+| Circulating Supply | 583,375,369 SOL |
+| Total Supply | 632,859,230 SOL |
 
 ## 🏦 DeFi & TVL
 
 | Metric | Value |
 |---|---|
-| Solana Chain TVL | **$5.60B** (-2.38% / 24h, +14.37% / 7d) |
+| Solana Chain TVL | **$5.60B** (-2.37% / 24h, +14.39% / 7d) |
 
 ### Top Protocols on Solana (by TVL)
 
 | Protocol | Category | TVL | 24h Δ |
 |---|---|---|---|
-| Binance CEX | CEX | $6.59B | +6.33% |
-| Sanctum Validator LSTs | Liquid Staking | $1.48B | -3.02% |
-| Kamino Lend | Lending | $1.18B | -4.09% |
+| Binance CEX | CEX | $6.60B | +6.45% |
+| Sanctum Validator LSTs | Liquid Staking | $1.48B | -3.59% |
+| Kamino Lend | Lending | $1.18B | -4.12% |
 | Raydium AMM | Dexs | $1.06B | -0.62% |
 | Jupiter Lend | Lending | $1.06B | -3.35% |
-| Bybit | CEX | $1.02B | +1.99% |
+| Bybit | CEX | $1.03B | +1.91% |
 
 ---
 

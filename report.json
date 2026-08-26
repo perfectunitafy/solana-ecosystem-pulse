@@ -1,38 +1,38 @@
 {
   "meta": {
-    "generated_at_utc": "2026-08-26T05:09:20Z",
-    "timestamp": 1787720960,
+    "generated_at_utc": "2026-08-26T05:44:19Z",
+    "timestamp": 1787723059,
     "pipeline_version": "1.0.0",
     "network": "Solana Mainnet-Beta"
   },
   "network_performance": {
     "epoch": 1022,
-    "absolute_slot": 441794636,
-    "block_height": 419843165,
-    "slot_index": 290636,
+    "absolute_slot": 441800389,
+    "block_height": 419848918,
+    "slot_index": 296389,
     "slots_in_epoch": 432000,
-    "epoch_progress_pct": 67.28,
-    "est_hours_remaining": 17.7,
-    "current_tps": 3381.0,
-    "avg_tps_30m": 3415.9,
-    "min_tps_30m": 3066.9,
-    "max_tps_30m": 3795.9,
+    "epoch_progress_pct": 68.61,
+    "est_hours_remaining": 17.0,
+    "current_tps": 3502.6,
+    "avg_tps_30m": 3389.2,
+    "min_tps_30m": 3033.9,
+    "max_tps_30m": 3671.1,
     "recent_tps_samples": [
-      3381.0,
-      3507.9,
-      3712.6,
-      3643.5,
-      3582.0,
-      3381.6,
-      3515.3,
-      3110.9,
-      3473.7,
-      3309.5,
-      3352.5,
-      3795.9,
-      3538.6,
-      3479.3,
-      3268.7
+      3502.6,
+      3622.6,
+      3566.5,
+      3577.4,
+      3566.6,
+      3473.2,
+      3398.9,
+      3377.1,
+      3671.1,
+      3374.1,
+      3494.6,
+      3415.7,
+      3402.6,
+      3420.2,
+      3177.8
     ],
     "solana_core_version": "4.2.0",
     "feature_set": 565236538
@@ -84,19 +84,19 @@
     ]
   },
   "economics": {
-    "price_usd": 96.49,
-    "change_24h_pct": -5.35,
-    "volume_24h_usd": 11619968379.46,
-    "market_cap_usd": 56289891180.4,
+    "price_usd": 97.12,
+    "change_24h_pct": -4.51,
+    "volume_24h_usd": 11195142969.08,
+    "market_cap_usd": 56657415846.02,
     "price_source": "OKX",
-    "total_supply_sol": 632859248.44,
-    "circulating_sol": 583375387.92,
+    "total_supply_sol": 632859229.61,
+    "circulating_sol": 583375369.09,
     "non_circulating_sol": 49483860.52
   },
   "defi": {
-    "tvl_usd": 5600673001,
-    "tvl_change_24h_pct": -2.38,
-    "tvl_change_7d_pct": 14.37,
+    "tvl_usd": 5601289392,
+    "tvl_change_24h_pct": -2.37,
+    "tvl_change_7d_pct": 14.39,
     "tvl_history_7d": [
       {
         "date": 1787184000,
@@ -120,31 +120,31 @@
       },
       {
         "date": 1787616000,
-        "tvl": 5737058388
+        "tvl": 5737348082
       },
       {
         "date": 1787702400,
-        "tvl": 5600673001
+        "tvl": 5601289392
       }
     ],
     "top_protocols": [
       {
         "name": "Binance CEX",
         "category": "CEX",
-        "tvl_solana_usd": 6586416265.69,
-        "change_1d": 6.33
+        "tvl_solana_usd": 6602162203.48,
+        "change_1d": 6.45
       },
       {
         "name": "Sanctum Validator LSTs",
         "category": "Liquid Staking",
-        "tvl_solana_usd": 1476042483.69,
-        "change_1d": -3.02
+        "tvl_solana_usd": 1475039720.28,
+        "change_1d": -3.59
       },
       {
         "name": "Kamino Lend",
         "category": "Lending",
-        "tvl_solana_usd": 1180961652.9,
-        "change_1d": -4.09
+        "tvl_solana_usd": 1180525179.08,
+        "change_1d": -4.12
       },
       {
         "name": "Raydium AMM",
@@ -161,8 +161,8 @@
       {
         "name": "Bybit",
         "category": "CEX",
-        "tvl_solana_usd": 1019742664.38,
-        "change_1d": 1.99
+        "tvl_solana_usd": 1026006603.25,
+        "change_1d": 1.91
       }
     ]
   },
