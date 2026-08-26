@@ -31,7 +31,9 @@
   }
 
   function load() {
-    fetch('history.jsonl?t=' + Date.now())
+    const isAlt = window.location.pathname.includes('/alt/') || window.location.pathname.includes('/alt');
+    const path = isAlt ? '../history.jsonl' : 'history.jsonl';
+    fetch(path + '?t=' + Date.now())
       .then(r => r.text())
       .then(t => {
         const rows = t.trim() ? t.trim().split('\n').map(JSON.parse) : [];

@@ -27,11 +27,11 @@
 
 | Artifact | URL |
 |---|---|
-| 🔴 Live dashboard | https://dynamic-guild-motherboard-phrases.trycloudflare.com/dashboard.html |
-| 🎨 Alt UI — TUI style | https://dynamic-guild-motherboard-phrases.trycloudflare.com/dashboard_v2.html |
-| 🎨 Alt UI — Terminal amber | https://dynamic-guild-motherboard-phrases.trycloudflare.com/dashboard_v3.html |
-| 📄 Markdown report | https://dynamic-guild-motherboard-phrases.trycloudflare.com/report.md |
-| 📄 JSON report | https://dynamic-guild-motherboard-phrases.trycloudflare.com/report.json |
+| 🔴 Live dashboard | https://browser-opens-politics-illustration.trycloudflare.com/dashboard.html |
+| 🎨 Alt UI — TUI style | https://browser-opens-politics-illustration.trycloudflare.com/dashboard_v2.html |
+| 🎨 Alt UI — Terminal amber | https://browser-opens-politics-illustration.trycloudflare.com/dashboard_v3.html |
+| 📄 Markdown report | https://browser-opens-politics-illustration.trycloudflare.com/report.md |
+| 📄 JSON report | https://browser-opens-politics-illustration.trycloudflare.com/report.json |
 | 📦 Source code | https://github.com/perfectunitafy/solana-ecosystem-pulse |
 
 ## Judging criteria mapping
