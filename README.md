@@ -34,7 +34,7 @@ dashboard*.html       → dependency-free static dashboards (vanilla JS/Canvas)
 - True TPS computed from `getRecentPerformanceSamples` (not node-reported averages)
 - Decentralization metrics: active/delinquent validators, stake concentration, **Nakamoto coefficient**
 - Rule-based anomaly detection with severity levels and an ecosystem health score (0–100)
-- Rolling 24h time-series (`history.jsonl`, one snapshot per pipeline cycle) rendered as lightweight Canvas charts
+- Rolling 24h time-series (`history.jsonl`, one snapshot per pipeline cycle) rendered as dependency-free SVG charts — TPS, DeFi TVL and SOL/USD in **all three** UI themes (shared `history_charts.js`)
 - Three complete UI themes, zero external dependencies, single static files
 
 ## Run

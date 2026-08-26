@@ -21,7 +21,7 @@
 
 **Outputs:** interactive dark dashboard (+2 alternate UI styles), human `report.md`, machine `report.json` — exactly per spec.
 
-**Automation:** pipeline every 15s, browser refresh 10s, time-series history accumulating continuously (500+ snapshots at submission).
+**Automation:** pipeline every 15s, browser refresh 10s, time-series history accumulating continuously (1,200+ real snapshots / 8h+ at submission, growing).
 
 ## Links
 

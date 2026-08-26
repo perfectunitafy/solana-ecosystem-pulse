@@ -94,8 +94,8 @@ tbody tr:hover{background:rgba(177,186,196,.04)}
 <div id="charts" style="margin-top:12px"></div>
 
 <div class="panel col-12" style="margin-top:12px">
-  <div class="panel-header">TPS — accumulated history <span id="histInfo" class="badge">0 pts</span></div>
-  <div class="panel-body"><canvas id="histChart" height="220" style="width:100%;height:180px;display:block"></canvas></div>
+  <div class="panel-header">Time series — accumulated history <span class="badge">TPS · TVL · SOL/USD</span></div>
+  <div class="panel-body"><div id="hist-charts"></div></div>
 </div>
 
 <div class="footer">
@@ -200,29 +200,13 @@ async function load(){
   const r=await fetch('report.json?t='+Date.now());
   if(!r.ok)throw new Error(r.status);
   render(await r.json());
-  fetch('history.jsonl?t='+Date.now()).then(x=>x.text()).then(t=>{
-    const pts=t.trim()?t.trim().split('\n').map(JSON.parse):[];
-    document.getElementById('histInfo').textContent=pts.length+' pts';
-    const cv=document.getElementById('histChart'),c=cv.getContext('2d');
-    cv.width=cv.offsetWidth||1200;cv.height=220;
-    c.clearRect(0,0,cv.width,cv.height);
-    if(pts.length>1){
-      const vals=pts.map(p=>p.tps),min=Math.min(...vals),max=Math.max(...vals),pad=(max-min)||1;
-      c.strokeStyle='#21262d';for(let i=1;i<4;i++){c.beginPath();c.moveTo(0,220*i/4);c.lineTo(cv.width,220*i/4);c.stroke();}
-      c.beginPath();vals.forEach((v,i)=>{const x=i/(vals.length-1)*cv.width,y=210-(v-min)/pad*190;i?c.lineTo(x,y):c.moveTo(x,y);});
-      c.strokeStyle='#58a6ff';c.lineWidth=1.5;c.stroke();
-      c.fillStyle='#8b949e';c.font='11px monospace';
-      c.fillText(fmtN(max),4,12);c.fillText(fmtN(min),4,216);
-    }else{
-      c.fillStyle='#8b949e';c.font='12px monospace';
-      c.fillText('accumulating TPS history — one snapshot per pipeline cycle (15s)…',10,110);
-    }
-  }).catch(()=>{});
  }catch(e){document.getElementById('nextUpd').textContent='fetch error: '+e.message}
 }
 load();setInterval(load,10000);
 setInterval(()=>{nextIn=nextIn<=0?10:nextIn-1;document.getElementById('nextUpd').textContent='refresh in '+nextIn+'s'},1000);
 setInterval(()=>{document.getElementById('clock').textContent=new Date().toISOString().slice(11,19)+' UTC'},1000);
 </script>
+<div id="hist-charts" style="max-width:1280px;margin:0 auto;padding:0 20px"></div>
+<script src="history_charts.js"></script>
 </body>
 </html>

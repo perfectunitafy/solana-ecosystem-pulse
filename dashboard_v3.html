@@ -113,5 +113,7 @@ async function load(){
 load();setInterval(load,10000);
 setInterval(()=>{nextIn=nextIn<=0?10:nextIn-1;document.getElementById('next').textContent='T-'+nextIn+'S'},1000);
 </script>
+<div id="hist-charts" style="padding:8px 16px"></div>
+<script src="history_charts.js"></script>
 </body>
 </html>
