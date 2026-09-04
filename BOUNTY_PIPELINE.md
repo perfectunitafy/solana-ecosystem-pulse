@@ -44,10 +44,6 @@ Total potential: ~$2,800 across three low-competition targets, all leveraging as
 - NectarFi ($1000, Sep 14): verified GLOBAL. Confirmed target.
 
 ## Revised active targets
-1. Dashboard $1000 (Sep 1) — submission ready
-2. Mato research $1500 (Aug 31) — draft v0.1 done
-3. Segmento $300 (Sep 2) — derivative of Mato material
-4. NectarFi $1000 (Sep 14) — requirements TBD
-5. Gibwork $350 — issue draft awaiting review
+- Все перечисленные баунти истекли на 2 сентября 2026. Новых открытых баунти в списке нет.
 
-Total realistic pipeline: up to $4,150
+Total realistic pipeline: $0

@@ -43,3 +43,24 @@
 2026-08-26T23:35:48Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=2bae3de2-6601-4141-b7ea-dceb248176d3 status=pass target=region2.v2.argotunnel.com
 2026-08-26T23:35:48Z INF precheck component="Cloudflare API" details="API is reachable" run_id=2bae3de2-6601-4141-b7ea-dceb248176d3 status=pass target=api.cloudflare.com:443
 2026-08-26T23:35:48Z INF precheck complete hard_fail=false run_id=2bae3de2-6601-4141-b7ea-dceb248176d3 suggested_protocol=http2
+2026-08-28T05:05:01Z INF Lost connection with the edge connIndex=0
+2026-08-28T05:05:01Z ERR failed to serve incoming request error="Error shutting down control stream: client disconnected"
+2026-08-28T05:05:01Z ERR Serve tunnel error error="connection with edge closed" connIndex=0 event=0 ip=198.41.192.7
+2026-08-28T05:05:01Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.7
+2026-08-28T05:05:02Z ERR Connection terminated error="connection with edge closed" connIndex=0
+2026-08-28T05:05:04Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=0 event=0 ip=198.41.192.7
+2026-08-28T05:05:04Z INF Registered tunnel connection connIndex=0 connection=a5540a7f-5d18-41f9-80fd-80c8c2c97f1f event=0 ip=198.41.192.7 location=dfw11 protocol=http2
+2026-08-28T05:12:41Z INF Lost connection with the edge connIndex=0
+2026-08-28T05:12:41Z ERR Serve tunnel error error="connection with edge closed" connIndex=0 event=0 ip=198.41.192.7
+2026-08-28T05:12:41Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.7
+2026-08-28T05:12:41Z ERR failed to serve incoming request error="Error shutting down control stream: client disconnected"
+2026-08-28T05:12:41Z ERR Connection terminated error="connection with edge closed" connIndex=0
+2026-08-28T05:13:00Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveID(65074) CurveP256] connIndex=0 event=0 ip=198.41.192.7
+2026-08-28T05:13:01Z INF Registered tunnel connection connIndex=0 connection=ebebebcf-edb6-4a61-85bf-2f6399466b6f event=0 ip=198.41.192.7 location=ord10 protocol=http2
+2026-08-28T19:49:05Z INF Initiating graceful shutdown due to signal terminated ...
+2026-08-28T19:49:05Z INF Unregistered tunnel connection connIndex=0 event=0 ip=198.41.192.7
+2026-08-28T19:49:05Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.7
+2026-08-28T19:49:05Z ERR Connection terminated connIndex=0
+2026-08-28T19:49:05Z ERR no more connections active and exiting
+2026-08-28T19:49:05Z INF Tunnel server stopped
+2026-08-28T19:49:05Z INF Metrics server stopped
